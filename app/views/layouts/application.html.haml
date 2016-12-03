@@ -10,3 +10,6 @@
     -flash.each do |name, msg|
       =content_tag :div, msg, class: name
     = yield
+-if current_user.present?
+  = current_user.email + " ile giriş yapıldı.."
+  = link_to 'Çıkış Yap', destroy_user_session_path, method: :delete
