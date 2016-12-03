@@ -1,0 +1,10 @@
+%h1
+  =@post.title
+  %br
+=@post.body
+%br
+=@post.show
+%br
+
+= link_to 'Düzenle', edit_post_path
+= link_to 'Sil', post_path, method: :delete

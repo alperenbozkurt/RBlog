@@ -1,0 +1,10 @@
+- @post.errors.full_messages.each do |post|
+  %li= message
+=form_for @post do |f|
+  = f.label 'Başlık : '
+  = f.text_field :title
+  %br
+  = f.label 'İçerik : '
+  = f.text_field :body
+  %br
+  = f.button :Gönder
