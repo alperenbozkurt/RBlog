@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :load_categories, only: [:edit, :new, :show, :update]
   def index
     @posts = Post.all
   end
@@ -37,13 +38,17 @@ class PostsController < ApplicationController
     flash[:Successfully] = "Yazı Silindi"
     redirect_to posts_path
   end
+
   private
 
+  def load_categories
+  	@categories = Category.all.collect {|c| [c.name, c.id]}
+  end
   def set_post
     @post = Post.find(params[:id])
   end
   def strong_params
-    params.require(:post).permit(:title, :body)
+    params.require(:post).permit(:title, :body, :category_id)
 	end
 
 end

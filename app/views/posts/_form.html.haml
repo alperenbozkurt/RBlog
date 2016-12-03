@@ -1,5 +1,5 @@
-- @post.errors.full_messages.each do |post|
-  %li= message
+- @post.errors.full_messages.each do |err|
+  %li= err
 =form_for @post do |f|
   = f.label 'Başlık : '
   = f.text_field :title
@@ -7,4 +7,5 @@
   = f.label 'İçerik : '
   = f.text_field :body
   %br
+  = f.select :category_id, @categories
   = f.button :Gönder
