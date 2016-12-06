@@ -1,19 +1,111 @@
 @import "bootstrap-sprockets"
 @import "bootstrap"
 @import url('https://fonts.googleapis.com/css?family=Lobster')
-$bg: #3498db
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif')
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:900')
+
+$bg-blue: rgba(52, 152, 219,1)
 $mainColor: #ecf0f1
+$color2: rgba(52, 152, 219,0.6)
+
 body
-  background: $bg
+  background: $bg-blue
+  margin: 0px
 
 .orta
   background: $mainColor
-  height: 200px
+  height: 230px
   width: auto
-  margin-top: 130px
-  box-shadow: 0px 0px 10px 2px rgba(71, 71, 71, 0.7)
+  margin-top: 10px
+  box-shadow: 0px 0px 20px 2px rgba(71, 71, 71, 1)
+  animation-name: orta
+  animation-duration: 2s
+  animation-fill-mode:forwards
 
 .baslik
   font-size: 60px
   text-align: center
   font-family: 'Lobster', cursive
+  text-shadow: 1px 1px 5px #000
+  color: #FFF
+  margin-top: 130px
+  animation-name: baslik
+  animation-duration: 3s
+  animation-fill-mode:forwards
+
+.ortala
+  margin-left: auto
+  margin-right: auto
+  width: 1100px
+
+.resim
+  margin-top: 30px
+  width: 170px
+  height: 170px
+  float: left
+  border-radius: 90px
+  background: $bg-blue
+  box-shadow: 0px 0px 20px 2px rgba(82, 82, 82, 1) inset
+  animation: baslik 3s forwards
+
+ul.menu
+  font-size: 28px
+  margin-top: 75px
+  margin-left: 20px
+  float: left
+  display: block
+  list-style: none
+  height: 50px
+  animation: resim 3s forwards
+  li
+    float: left
+    display: block
+    a
+      padding: 10px
+      border-radius: 6px
+      color: $bg-blue
+      float: left
+      text-decoration: none
+      font-family: 'Alegreya Sans SC', sans-serif
+      &:hover
+        padding: 10px
+        border-radius: 3px
+        background-color: $bg-blue
+        text-shadow: 1px 1px 5px #000
+        color: $mainColor
+        box-shadow: inset 0px 0px 10px 2px rgba(81, 81, 81, 0.6)
+        float: left
+        text-decoration: none
+
+.aciklamalar
+  font-family: 'Lobster', cursive
+  margin-left: 50
+  float: left
+  font-size: 20px
+  margin-top: 25px
+  color: $color2
+  animation: baslik 3s forwards
+
+@keyframes baslik
+  0%
+    opacity: 0
+  75%
+    opacity: 0
+  100%
+    opacity: 1
+
+@keyframes orta
+  0%
+    height: 0px
+    margin-top: 125px
+  100%
+    height: 230px
+    margin-top: 10px
+
+@keyframes resim
+  0%
+    opacity: 0
+  66%
+    opacity: 0
+  100%
+    opacity: 1
