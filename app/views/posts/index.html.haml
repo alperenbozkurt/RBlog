@@ -1,6 +1,34 @@
--@posts.each do |post|
-  %h1= link_to post.title, post_path(post)
-  %br
-  =post.body
-  %br
-  =post.show
+.ust
+  .ortalaBlog
+    .baslikBlog
+      Alperen Bozkurt
+    %ul.menuBlog
+      %li
+        %a{:title => @title, :href => root_path} Anasayfa
+      %li
+        %a{:title => @title, :href => posts_path} Blog
+      %li
+        %a{:title => @title, :href => '#'} Programlar
+      %li
+        %a{:title => @title, :href => '#'} Böcekler
+      %li
+        %a{:title => @title, :href => '#'} Algoritmalar
+      %li
+        %a{:title => @title, :href => '#'} İletişim
+.ortalaBlog
+  .yazilar
+    -@posts.order('created_at desc').each do |post|
+      .yazi
+        .postBaslik
+          %h2= link_to post.title, post_path(post)
+          .yaziBilgisi= post.created_at
+        %hr
+        %p
+          =post.body
+  .sag
+    .widget
+      %h3= 'Son Yazılar'
+      %hr
+      %ul
+        -@posts.order('created_at desc').last(5).each do |post|
+          %li= link_to post.title, post_path(post)
