@@ -1,21 +1,27 @@
 @import "bootstrap-sprockets"
 @import "bootstrap"
 @import url('https://fonts.googleapis.com/css?family=Lobster')
-@import url('https://fonts.googleapis.com/css?family=Bree+Serif')
+@import url(https://fonts.googleapis.com/css?family=Slabo+27px&subset=latin,latin-ext)
 @import url('https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:900')
-@import url('https://fonts.googleapis.com/css?family=Slabo+27px&subset=latin,latin-ext')
 
 $orange: #d35400
 $blue: rgba(52, 152, 219,1)
 $sc-color: $orange
-
 $mainColor: #ecf0f1
 $color2: rgba(230, 126, 34,1)
+
+$baslik: 'Slabo 27px', serif
+$normal: 'Slabo 27px', serif
+$logo: 'Lobster', cursive
+$menu: 'Alegreya Sans SC', sans-serif
+
+
 
 body
   background: $sc-color
   margin: 0px
-  font-family: 'Slabo 27px', serif
+  font-family: $normal
+  overflow-x: hidden
 .orta
   background: $mainColor
   height: 230px
@@ -29,7 +35,7 @@ body
 .baslik
   font-size: 60px
   text-align: center
-  font-family: 'Lobster', cursive
+  font-family: $logo
   text-shadow: 1px 1px 5px #000
   color: #FFF
   margin-top: 130px
@@ -60,6 +66,7 @@ ul.menu
   display: block
   list-style: none
   height: 50px
+  font-family: $menu
   animation: resim 3s forwards
   li
     float: left
@@ -70,7 +77,6 @@ ul.menu
       color: $sc-color
       float: left
       text-decoration: none
-      font-family: 'Alegreya Sans SC', sans-serif
       &:hover
         padding: 10px
         border-radius: 3px
@@ -82,7 +88,7 @@ ul.menu
         text-decoration: none
 
 .aciklamalar
-  font-family: 'Lobster', cursive
+  font-family: $logo
   margin-left: 50
   float: left
   font-size: 20px
@@ -126,7 +132,7 @@ ul.menu
   box-shadow: 0px 0px 20px 2px rgba(81,81, 81, 0.6)
 .baslikBlog
   font-size: 48px
-  font-family: 'Lobster', cursive
+  font-family: $logo
   color: $sc-color
   text-shadow: 1px 1px 5px #000 inset
   float: left
@@ -135,6 +141,7 @@ ul.menu
   margin-right: auto
   width: 1200px
 ul.menuBlog
+  font-family: $menu
   font-size: 23px
   margin-left: 15px
   margin-top: 15px
@@ -151,7 +158,6 @@ ul.menuBlog
       padding-top: 5px
       color: #d35400
       float: left
-      font-family: 'Alegreya Sans SC', sans-serif
       text-decoration:none
       transition-property: color,border-color
       transition-duration: 1s
@@ -163,7 +169,6 @@ ul.menuBlog
         border-bottom: 5px solid #e67e22
         color: #e67e22
         float: left
-        font-family: 'Alegreya Sans SC', sans-serif
         text-decoration: none
 .yazilar
   float: left
@@ -177,18 +182,20 @@ ul.menuBlog
   border-radius: 3px
   box-shadow: 0px 0px 10px 1px rgba(82,82,82,0.6)
   float:left
-h2
-  margin-left: 15px
-  float: left
-  margin-top: 15px
-  margin-bottom: 5px
-  font-style: 'Slabo 27px', serif
-  a
-    text-decoration: none
-    color : $sc-color
+  h2
+    margin-left: 15px
     float: left
-    &:hover
-      color : $color2
+    margin-top: 15px
+    margin-bottom: 5px
+    font-size: 25px
+    font-family: $baslik
+    font-weight: bold
+    a
+      text-decoration: none
+      color : $sc-color
+      float: left
+      &:hover
+        color : $color2
 .yaziBilgisi
   margin-bottom: 0px
   color: rgba(81,81,81,0.4)
@@ -196,7 +203,7 @@ h2
   float: right
   margin-top: 24px
   margin-right: 50px
-  font-family: 'Lobster', cursive
+  font-family: $logo
 hr
   float: left
   width: 650px
@@ -219,45 +226,47 @@ p
   box-shadow: 0px 0px 10px 1px rgba(82,82,82,0.6)
   float: left
   text-align: center
-
   h3
-    margin-left: 15px
     color : #d35400
-    font-family: 'Lobster', cursive
+    font-family: $logo
+    width: 280px
     margin-top: 15px
     margin-bottom: 15px
     animation-name:baslik
     animation-duration: 1.2s
     animation-fill-mode:forwards
-  ul
-  text-align: left
-  color: rgba(0,0,0,0.8)
-  li
-    height: 20px
-    margin: 15px
-    list-style: circle
-    line-height: 20px
-    color: #d35400
-    a
-      text-decoration: none
-      margin: 5px
-      color: #e67e22
-      transition-property: color
-      transition-duration: 0.5s
-      transition-delay: 0s
-      padding: 2px
-
-      &:hover
-        padding: 2px
-        color: #000
-        border-radius: 5px
-        text-decoration: none
-        background-color: #e67e22
+    float: left
   hr
-    width: 270px
-    margin-left: auto
-    margin-right: auto
+    margin-left: 5px
     border: 1px solid #d35400
+    float: left
+  ul
+    text-align: left
+    color: rgba(0,0,0,0.8)
+    float: left
+    li
+      height: 20px
+      list-style: circle
+      line-height: 20px
+      color: #d35400
+      a
+        text-decoration: none
+        margin: 5px
+        color: #e67e22
+        transition-property: color
+        transition-duration: 0.5s
+        transition-delay: 0s
+        padding: 2px
+
+        &:hover
+          padding: 2px
+          color: #000
+          border-radius: 5px
+          text-decoration: none
+          background-color: #e67e22
+
 .sag
   float: left
   width: 280px
+.yorumlar
+  margin: 15px

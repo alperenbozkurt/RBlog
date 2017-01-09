@@ -1,30 +1,47 @@
-%h1
-  =@post.title
-  %br
-=@post.body
-%br
-=@post.show
-%br
-=link_to @post.category.name, category_path(@post.category)
+= render 'top'
+.ortalaBlog
+  .yazilar
+    .yazi
+      .postBaslik
+        %h2=@post.title
+        .yaziBilgisi= @post.created_at
+      %hr
+      %p
+        =@post.body
+      .yaziBilgisi
+        =link_to @post.category.name, category_path(@post.category)
+        Kategorisine ait bu yazı
+        =@post.show
+        kere görüntülendi.
 
-#disqus_thread
-:javascript
-  var disqus_config = function () {
-  this.page.url ="#{request.original_url}";
-  this.page.identifier = "#{@post.id}";
-  };
+      %br
+      .yorumlar 
+        #disqus_thread
+        :javascript
+          var disqus_config = function () {
+          this.page.url ="#{request.original_url}";
+          this.page.identifier = "#{@post.id}";
+          };
 
-  (function() { // DON'T EDIT BELOW THIS LINE
-  var d = document, s = d.createElement('script');
-  s.src = '//rblog-1.disqus.com/embed.js';
-  s.setAttribute('data-timestamp', +new Date());
-  (d.head || d.body).appendChild(s);
-  })();
+          (function() { // DON'T EDIT BELOW THIS LINE
+          var d = document, s = d.createElement('script');
+          s.src = '//rblog-1.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+          })();
 
-%noscript
-  Please enable JavaScript to view the
-  %a{href: "https://disqus.com/?ref_noscript", rel: "nofollow" }
-  comments powered by Disqus.
+        %noscript
+          Please enable JavaScript to view the
+          %a{href: "https://disqus.com/?ref_noscript", rel: "nofollow" }
+          comments powered by Disqus.
+
+  .sag
+    .widget
+      %h3= 'Son Yazılar'
+      %hr
+      %ul
+        -@posts.order('created_at desc').last(5).each do |post|
+          %li= link_to post.title, post_path(post)
 
 
 = link_to 'Düzenle', edit_post_path
