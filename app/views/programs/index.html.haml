@@ -1,0 +1,6 @@
+-@programs.each do |program|
+  %h1= link_to program.name, program_path(program)
+  %br
+  =program.content
+  %br
+  =link_to 'İndir', program.link

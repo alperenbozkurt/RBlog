@@ -1,0 +1,29 @@
+%h1
+  =@program.name
+  %br
+=@program.content
+%br
+=link_to 'İndir', @program.link
+
+#disqus_thread
+:javascript
+  var disqus_config = function () {
+  this.page.url ="#{request.original_url}";
+  this.page.identifier = "#{@program.id}";
+  };
+
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = '//rblog-1.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+
+%noscript
+  Please enable JavaScript to view the
+  %a{href: "https://disqus.com/?ref_noscript", rel: "nofollow" }
+  comments powered by Disqus.
+
+
+= link_to 'Düzenle', edit_program_path
+= link_to 'Sil', program_path, method: :delete
