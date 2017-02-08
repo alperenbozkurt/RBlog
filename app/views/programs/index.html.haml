@@ -4,6 +4,7 @@
     -@programs.each do |program|
       .program
         .urunResmi
+
         .urunAdi
           =link_to program.name, program_path(program)
         .aciklamaUrun
@@ -12,6 +13,7 @@
         .fiyatVeOs
           .fiyat
             =link_to 'Ücretsiz İndir', program.link
+            .windows
 .footer
   .ortala
     .copy AlperenBozkurt 2015-2016 | Bazı Hakları Saklıdır.
