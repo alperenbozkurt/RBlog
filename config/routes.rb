@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :categories
   resources :programs
   root 'home#index'
+  resources :contact
 end
