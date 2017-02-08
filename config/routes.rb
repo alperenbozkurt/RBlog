@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   resources :posts
   resources :categories
   resources :programs
-  root 'posts#index'
+  root 'home#index'
+  resources :contact
 end

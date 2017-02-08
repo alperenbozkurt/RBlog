@@ -19,7 +19,7 @@ class PostsController < ApplicationController
     end
   end
   def show
-
+    @posts = Post.all
   end
   def edit
 

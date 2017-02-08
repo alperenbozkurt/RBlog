@@ -1,6 +1,24 @@
--@programs.each do |program|
-  %h1= link_to program.name, program_path(program)
-  %br
-  =program.content
-  %br
-  =link_to 'İndir', program.link
+=render :template => 'layouts/top'
+.ortalaAna
+  .programlar
+    -@programs.each do |program|
+      .program
+        .urunResmi
+
+        .urunAdi
+          =link_to program.name, program_path(program)
+        .aciklamaUrun
+          %p
+            =program.content
+        .fiyatVeOs
+          .fiyat
+            =link_to 'Ücretsiz İndir', program.link
+            .windows
+.footer
+  .ortala
+    .copy AlperenBozkurt 2015-2016 | Bazı Hakları Saklıdır.
+    .copyy
+      %img{:height => "20", :src => "https://creativecommons.org/wp-content/themes/creativecommons.org/images/chooser_cc.png", :width => "20"}/
+      %img{:height => "20", :src => "https://creativecommons.org/wp-content/themes/creativecommons.org/images/chooser_by.png", :width => "20"}/
+      %img{:height => "20", :src => "https://creativecommons.org/wp-content/themes/creativecommons.org/images/chooser_sa.png", :width => "20"}/
+      | Tasarım ve kodlama Alperen Bozkurt
