@@ -11,24 +11,23 @@
       %li
         %a{:title => @title, :href => '#'} İletişim
 .ortalaAna
-  .yazilar
-    .yazi
+  .programim
+    .programcerceve
       .ustr
-        %h2= link_to @post.title, post_path(@post)
-        .yazibilgisi Alperen Bozkurt tarafından #{@post.created_at} tarihinde yayınlandı.
+        %h2
+          =@program.name
         %hr/
       %p
-        =@post.body
-      %p
-        =link_to @post.category.name, category_path(@post.category)
-        Kategorisine sahip bu post #{@post.show} kere görüntülendi.
-      %hr/
+        =@program.content
+        .fiyatVeOs
+          .fiyat
+            =link_to 'Ücretsiz İndir', @program.link
       %p
         #disqus_thread
         :javascript
           var disqus_config = function () {
           this.page.url ="#{request.original_url}";
-          this.page.identifier = "#{@post.id}";
+          this.page.identifier = "#{@program.id}";
           };
 
           (function() { // DON'T EDIT BELOW THIS LINE
@@ -46,10 +45,6 @@
 
         = link_to 'Düzenle', edit_post_path
         = link_to 'Sil', post_path, method: :delete
-.sag
-  .widget
-    %h3 Son Yazılar
-    %hr/
 
 .footer
   .ortala

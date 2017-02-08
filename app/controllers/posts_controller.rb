@@ -20,10 +20,9 @@ class PostsController < ApplicationController
   end
   def show
     @posts = Post.all
-    @post = Post.find(params[:id])
   end
   def edit
-    @post = Post.find(params[:id])
+
   end
   def update
     if @post.update(strong_params)
