@@ -31,10 +31,10 @@
           %a{href: "https://disqus.com/?ref_noscript", rel: "nofollow" }
           comments powered by Disqus.
 
-
-        = link_to 'Düzenle', edit_post_path
-        = link_to 'Sil', post_path, method: :delete
-
+        - if current_user.present?
+          = link_to 'Düzenle', edit_post_path
+          = link_to 'Sil', post_path, method: :delete
+        
 .footer
   .ortala
     .copy AlperenBozkurt 2015-2017 | Bazı Hakları Saklıdır.

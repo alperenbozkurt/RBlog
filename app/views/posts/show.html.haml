@@ -32,9 +32,10 @@
           %a{href: "https://disqus.com/?ref_noscript", rel: "nofollow" }
           comments powered by Disqus.
 
-
-        = link_to 'Düzenle', edit_post_path
-        = link_to 'Sil', post_path, method: :delete
+        - if current_user.present?
+          = link_to 'Düzenle', edit_post_path
+          = link_to 'Sil', post_path, method: :delete
+        
 .sag
   .widget
     %h3 Son Yazılar
