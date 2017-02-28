@@ -55,3 +55,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'haml'
 gem 'disqus_rails'
 gem 'devise'
+gem 'redcarpet', '~> 3.0.0'

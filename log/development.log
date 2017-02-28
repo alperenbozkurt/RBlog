@@ -1157,3 +1157,1675 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 76ms (Views: 75.1ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-27 17:44:14 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (18.1ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (87.5ms)
+Completed 200 OK in 587ms (Views: 469.2ms | ActiveRecord: 18.2ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-27 17:44:26 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (3.5ms)
+  [1m[36mCategory Load (1.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (23.0ms)
+Completed 200 OK in 170ms (Views: 163.8ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-27 17:45:47 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (19.2ms)
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/show.html.haml within layouts/application (184.6ms)
+Completed 500 Internal Server Error in 197ms (ActiveRecord: 2.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `simple_html' for #<#<Class:0x0055a40b49b8f8>:0x007fc4120806a0>
+Did you mean?  simple_format):
+     7:         .yazibilgisi Alperen Bozkurt tarafından #{@post.created_at} tarihinde yayınlandı.
+     8:         %hr/
+     9:       %p
+    10:         = markdown simple_html @post.body
+    11:       %p
+    12:         =link_to @post.category.name, category_path(@post.category)
+    13:         Kategorisine sahip bu post #{@post.show} kere görüntülendi.
+  
+app/views/posts/show.html.haml:10:in `_app_views_posts_show_html_haml___3465986792330290677_70240046418100'
+  Rendering /home/alperen/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/alperen/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/alperen/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.7ms)
+  Rendering /home/alperen/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/alperen/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.3ms)
+  Rendering /home/alperen/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/alperen/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /home/alperen/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (50.0ms)
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-27 17:46:16 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.3ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (23.9ms)
+Completed 200 OK in 99ms (Views: 91.4ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-27 17:46:34 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (5.2ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (24.8ms)
+Completed 200 OK in 103ms (Views: 94.2ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-27 17:46:51 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (14.8ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (29.7ms)
+Completed 200 OK in 102ms (Views: 96.3ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at 2017-02-27 17:48:32 +0300
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/edit.html.haml within layouts/application
+  Rendered posts/_form.html.haml (116.9ms)
+  Rendered posts/edit.html.haml within layouts/application (118.5ms)
+Completed 200 OK in 223ms (Views: 192.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at 2017-02-27 17:48:48 +0300
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/edit.html.haml within layouts/application
+  Rendered posts/_form.html.haml (7.6ms)
+  Rendered posts/edit.html.haml within layouts/application (11.8ms)
+Completed 200 OK in 152ms (Views: 145.9ms | ActiveRecord: 1.1ms)
+
+
+Started PATCH "/posts/1" for 127.0.0.1 at 2017-02-27 17:50:41 +0300
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Xph8sw7/7d336PA007lunnmbFpr9x0spl+WUBrbwgujXVRSWEVbsQW2SMynIGQE+djetlpDdmmx9QApXHFf6sw==", "post"=>{"title"=>"afwefwf", "body"=>"Welcome to StackEdit!\r\n===================\r\n\r\n\r\nHey! I'm your first Markdown document in **StackEdit**[^stackedit]. Don't delete me, I'm very helpful! I can be recovered anyway in the **Utils** tab of the <i class=\"icon-cog\"></i> **Settings** dialog.\r\n\r\n----------\r\n\r\n\r\nDocuments\r\n-------------\r\n\r\nStackEdit stores your documents in your browser, which means all your documents are automatically saved locally and are accessible **offline!**\r\n\r\n> **Note:**\r\n\r\n> - StackEdit is accessible offline after the application has been loaded for the first time.\r\n> - Your local documents are not shared between different browsers or computers.\r\n> - Clearing your browser's data may **delete all your local documents!** Make sure your documents are synchronized with **Google Drive** or **Dropbox** (check out the [<i class=\"icon-refresh\"></i> Synchronization](#synchronization) section).\r\n\r\n#### <i class=\"icon-file\"></i> Create a document\r\n\r\nThe document panel is accessible using the <i class=\"icon-folder-open\"></i> button in the navigation bar. You can create a new document by clicking <i class=\"icon-file\"></i> **New document** in the document panel.\r\n\r\n#### <i class=\"icon-folder-open\"></i> Switch to another document\r\n\r\nAll your local documents are listed in the document panel. You can switch from one to another by clicking a document in the list or you can toggle documents using <kbd>Ctrl+[</kbd> and <kbd>Ctrl+]</kbd>.\r\n\r\n#### <i class=\"icon-pencil\"></i> Rename a document\r\n\r\nYou can rename the current document by clicking the document title in the navigation bar.\r\n\r\n#### <i class=\"icon-trash\"></i> Delete a document\r\n\r\nYou can delete the current document by clicking <i class=\"icon-trash\"></i> **Delete document** in the document panel.\r\n\r\n#### <i class=\"icon-hdd\"></i> Export a document\r\n\r\nYou can save the current document to a file by clicking <i class=\"icon-hdd\"></i> **Export to disk** from the <i class=\"icon-provider-stackedit\"></i> menu panel.\r\n\r\n> **Tip:** Check out the [<i class=\"icon-upload\"></i> Publish a document](#publish-a-document) section for a description of the different output formats.\r\n\r\n\r\n----------\r\n\r\n\r\nSynchronization\r\n-------------------\r\n\r\nStackEdit can be combined with <i class=\"icon-provider-gdrive\"></i> **Google Drive** and <i class=\"icon-provider-dropbox\"></i> **Dropbox** to have your documents saved in the *Cloud*. The synchronization mechanism takes care of uploading your modifications or downloading the latest version of your documents.\r\n\r\n> **Note:**\r\n\r\n> - Full access to **Google Drive** or **Dropbox** is required to be able to import any document in StackEdit. Permission restrictions can be configured in the settings.\r\n> - Imported documents are downloaded in your browser and are not transmitted to a server.\r\n> - If you experience problems saving your documents on Google Drive, check and optionally disable browser extensions, such as Disconnect.\r\n\r\n#### <i class=\"icon-refresh\"></i> Open a document\r\n\r\nYou can open a document from <i class=\"icon-provider-gdrive\"></i> **Google Drive** or the <i class=\"icon-provider-dropbox\"></i> **Dropbox** by opening the <i class=\"icon-refresh\"></i> **Synchronize** sub-menu and by clicking **Open from...**. Once opened, any modification in your document will be automatically synchronized with the file in your **Google Drive** / **Dropbox** account.\r\n\r\n#### <i class=\"icon-refresh\"></i> Save a document\r\n\r\nYou can save any document by opening the <i class=\"icon-refresh\"></i> **Synchronize** sub-menu and by clicking **Save on...**. Even if your document is already synchronized with **Google Drive** or **Dropbox**, you can export it to a another location. StackEdit can synchronize one document with multiple locations and accounts.\r\n\r\n#### <i class=\"icon-refresh\"></i> Synchronize a document\r\n\r\nOnce your document is linked to a <i class=\"icon-provider-gdrive\"></i> **Google Drive** or a <i class=\"icon-provider-dropbox\"></i> **Dropbox** file, StackEdit will periodically (every 3 minutes) synchronize it by downloading/uploading any modification. A merge will be performed if necessary and conflicts will be detected.\r\n\r\nIf you just have modified your document and you want to force the synchronization, click the <i class=\"icon-refresh\"></i> button in the navigation bar.\r\n\r\n> **Note:** The <i class=\"icon-refresh\"></i> button is disabled when you have no document to synchronize.\r\n\r\n#### <i class=\"icon-refresh\"></i> Manage document synchronization\r\n\r\nSince one document can be synchronized with multiple locations, you can list and manage synchronized locations by clicking <i class=\"icon-refresh\"></i> **Manage synchronization** in the <i class=\"icon-refresh\"></i> **Synchronize** sub-menu. This will let you remove synchronization locations that are associated to your document.\r\n\r\n> **Note:** If you delete the file from **Google Drive** or from **Dropbox**, the document will no longer be synchronized with that location.\r\n\r\n----------\r\n\r\n\r\nPublication\r\n-------------\r\n\r\nOnce you are happy with your document, you can publish it on different websites directly from StackEdit. As for now, StackEdit can publish on **Blogger**, **Dropbox**, **Gist**, **GitHub**, **Google Drive**, **Tumblr**, **WordPress** and on any SSH server.\r\n\r\n#### <i class=\"icon-upload\"></i> Publish a document\r\n\r\nYou can publish your document by opening the <i class=\"icon-upload\"></i> **Publish** sub-menu and by choosing a website. In the dialog box, you can choose the publication format:\r\n\r\n- Markdown, to publish the Markdown text on a website that can interpret it (**GitHub** for instance),\r\n- HTML, to publish the document converted into HTML (on a blog for example),\r\n- Template, to have a full control of the output.\r\n\r\n> **Note:** The default template is a simple webpage wrapping your document in HTML format. You can customize it in the **Advanced** tab of the <i class=\"icon-cog\"></i> **Settings** dialog.\r\n\r\n#### <i class=\"icon-upload\"></i> Update a publication\r\n\r\nAfter publishing, StackEdit will keep your document linked to that publication which makes it easy for you to update it. Once you have modified your document and you want to update your publication, click on the <i class=\"icon-upload\"></i> button in the navigation bar.\r\n\r\n> **Note:** The <i class=\"icon-upload\"></i> button is disabled when your document has not been published yet.\r\n\r\n#### <i class=\"icon-upload\"></i> Manage document publication\r\n\r\nSince one document can be published on multiple locations, you can list and manage publish locations by clicking <i class=\"icon-upload\"></i> **Manage publication** in the <i class=\"icon-provider-stackedit\"></i> menu panel. This will let you remove publication locations that are associated to your document.\r\n\r\n> **Note:** If the file has been removed from the website or the blog, the document will no longer be published on that location.\r\n\r\n----------\r\n\r\n\r\nMarkdown Extra\r\n--------------------\r\n\r\nStackEdit supports **Markdown Extra**, which extends **Markdown** syntax with some nice features.\r\n\r\n> **Tip:** You can disable any **Markdown Extra** feature in the **Extensions** tab of the <i class=\"icon-cog\"></i> **Settings** dialog.\r\n\r\n> **Note:** You can find more information about **Markdown** syntax [here][2] and **Markdown Extra** extension [here][3].\r\n\r\n\r\n### Tables\r\n\r\n**Markdown Extra** has a special syntax for tables:\r\n\r\nItem     | Value\r\n-------- | ---\r\nComputer | $1600\r\nPhone    | $12\r\nPipe     | $1\r\n\r\nYou can specify column alignment with one or two colons:\r\n\r\n| Item     | Value | Qty   |\r\n| :------- | ----: | :---: |\r\n| Computer | $1600 |  5    |\r\n| Phone    | $12   |  12   |\r\n| Pipe     | $1    |  234  |\r\n\r\n\r\n### Definition Lists\r\n\r\n**Markdown Extra** has a special syntax for definition lists too:\r\n\r\nTerm 1\r\nTerm 2\r\n:   Definition A\r\n:   Definition B\r\n\r\nTerm 3\r\n\r\n:   Definition C\r\n\r\n:   Definition D\r\n\r\n\t> part of definition D\r\n\r\n\r\n### Fenced code blocks\r\n\r\nGitHub's fenced code blocks are also supported with **Highlight.js** syntax highlighting:\r\n\r\n```\r\n// Foo\r\nvar bar = 0;\r\n```\r\n\r\n> **Tip:** To use **Prettify** instead of **Highlight.js**, just configure the **Markdown Extra** extension in the <i class=\"icon-cog\"></i> **Settings** dialog.\r\n\r\n> **Note:** You can find more information:\r\n\r\n> - about **Prettify** syntax highlighting [here][5],\r\n> - about **Highlight.js** syntax highlighting [here][6].\r\n\r\n\r\n### Footnotes\r\n\r\nYou can create footnotes like this[^footnote].\r\n\r\n  [^footnote]: Here is the *text* of the **footnote**.\r\n\r\n\r\n### SmartyPants\r\n\r\nSmartyPants converts ASCII punctuation characters into \"smart\" typographic punctuation HTML entities. For example:\r\n\r\n|                  | ASCII                        | HTML              |\r\n ----------------- | ---------------------------- | ------------------\r\n| Single backticks | `'Isn't this fun?'`            | 'Isn't this fun?' |\r\n| Quotes           | `\"Isn't this fun?\"`            | \"Isn't this fun?\" |\r\n| Dashes           | `-- is en-dash, --- is em-dash` | -- is en-dash, --- is em-dash |\r\n\r\n\r\n### Table of contents\r\n\r\nYou can insert a table of contents using the marker `[TOC]`:\r\n\r\n[TOC]\r\n\r\n\r\n### MathJax\r\n\r\nYou can render *LaTeX* mathematical expressions using **MathJax**, as on [math.stackexchange.com][1]:\r\n\r\nThe *Gamma function* satisfying $\\Gamma(n) = (n-1)!\\quad\\forall n\\in\\mathbb N$ is via the Euler integral\r\n\r\n$$\r\n\\Gamma(z) = \\int_0^\\infty t^{z-1}e^{-t}dt\\,.\r\n$$\r\n\r\n> **Tip:** To make sure mathematical expressions are rendered properly on your website, include **MathJax** into your template:\r\n\r\n```\r\n<script type=\"text/javascript\" src=\"https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML\"></script>\r\n```\r\n\r\n> **Note:** You can find more information about **LaTeX** mathematical expressions [here][4].\r\n\r\n\r\n### UML diagrams\r\n\r\nYou can also render sequence diagrams like this:\r\n\r\n```sequence\r\nAlice->Bob: Hello Bob, how are you?\r\nNote right of Bob: Bob thinks\r\nBob-->Alice: I am good thanks!\r\n```\r\n\r\nAnd flow charts like this:\r\n\r\n```flow\r\nst=>start: Start\r\ne=>end\r\nop=>operation: My Operation\r\ncond=>condition: Yes or No?\r\n\r\nst->op->cond\r\ncond(yes)->e\r\ncond(no)->op\r\n```\r\n\r\n> **Note:** You can find more information:\r\n\r\n> - about **Sequence diagrams** syntax [here][7],\r\n> - about **Flow charts** syntax [here][8].\r\n\r\n### Support StackEdit\r\n\r\n[![](https://cdn.monetizejs.com/resources/button-32.png)](https://monetizejs.com/authorize?client_id=ESTHdCYOi18iLhhO&summary=true)\r\n\r\n  [^stackedit]: [StackEdit](https://stackedit.io/) is a full-featured, open-source Markdown editor based on PageDown, the Markdown library used by Stack Overflow and the other Stack Exchange sites.\r\n\r\n\r\n  [1]: http://math.stackexchange.com/\r\n  [2]: http://daringfireball.net/projects/markdown/syntax \"Markdown\"\r\n  [3]: https://github.com/jmcmanus/pagedown-extra \"Pagedown Extra\"\r\n  [4]: http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference\r\n  [5]: https://code.google.com/p/google-code-prettify/\r\n  [6]: http://highlightjs.org/\r\n  [7]: http://bramp.github.io/js-sequence-diagrams/\r\n  [8]: http://adrai.github.io/flowchart.js/\r\n", "category_id"=>"1"}, "button"=>"", "id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.7ms)[0m  [1m[33mUPDATE "posts" SET "body" = $1, "updated_at" = $2 WHERE "posts"."id" = $3[0m  [["body", "Welcome to StackEdit!\r\n===================\r\n\r\n\r\nHey! I'm your first Markdown document in **StackEdit**[^stackedit]. Don't delete me, I'm very helpful! I can be recovered anyway in the **Utils** tab of the <i class=\"icon-cog\"></i> **Settings** dialog.\r\n\r\n----------\r\n\r\n\r\nDocuments\r\n-------------\r\n\r\nStackEdit stores your documents in your browser, which means all your documents are automatically saved locally and are accessible **offline!**\r\n\r\n> **Note:**\r\n\r\n> - StackEdit is accessible offline after the application has been loaded for the first time.\r\n> - Your local documents are not shared between different browsers or computers.\r\n> - Clearing your browser's data may **delete all your local documents!** Make sure your documents are synchronized with **Google Drive** or **Dropbox** (check out the [<i class=\"icon-refresh\"></i> Synchronization](#synchronization) section).\r\n\r\n#### <i class=\"icon-file\"></i> Create a document\r\n\r\nThe document panel is accessible using the <i class=\"icon-folder-open\"></i> button in the navigation bar. You can create a new document by clicking <i class=\"icon-file\"></i> **New document** in the document panel.\r\n\r\n#### <i class=\"icon-folder-open\"></i> Switch to another document\r\n\r\nAll your local documents are listed in the document panel. You can switch from one to another by clicking a document in the list or you can toggle documents using <kbd>Ctrl+[</kbd> and <kbd>Ctrl+]</kbd>.\r\n\r\n#### <i class=\"icon-pencil\"></i> Rename a document\r\n\r\nYou can rename the current document by clicking the document title in the navigation bar.\r\n\r\n#### <i class=\"icon-trash\"></i> Delete a document\r\n\r\nYou can delete the current document by clicking <i class=\"icon-trash\"></i> **Delete document** in the document panel.\r\n\r\n#### <i class=\"icon-hdd\"></i> Export a document\r\n\r\nYou can save the current document to a file by clicking <i class=\"icon-hdd\"></i> **Export to disk** from the <i class=\"icon-provider-stackedit\"></i> menu panel.\r\n\r\n> **Tip:** Check out the [<i class=\"icon-upload\"></i> Publish a document](#publish-a-document) section for a description of the different output formats.\r\n\r\n\r\n----------\r\n\r\n\r\nSynchronization\r\n-------------------\r\n\r\nStackEdit can be combined with <i class=\"icon-provider-gdrive\"></i> **Google Drive** and <i class=\"icon-provider-dropbox\"></i> **Dropbox** to have your documents saved in the *Cloud*. The synchronization mechanism takes care of uploading your modifications or downloading the latest version of your documents.\r\n\r\n> **Note:**\r\n\r\n> - Full access to **Google Drive** or **Dropbox** is required to be able to import any document in StackEdit. Permission restrictions can be configured in the settings.\r\n> - Imported documents are downloaded in your browser and are not transmitted to a server.\r\n> - If you experience problems saving your documents on Google Drive, check and optionally disable browser extensions, such as Disconnect.\r\n\r\n#### <i class=\"icon-refresh\"></i> Open a document\r\n\r\nYou can open a document from <i class=\"icon-provider-gdrive\"></i> **Google Drive** or the <i class=\"icon-provider-dropbox\"></i> **Dropbox** by opening the <i class=\"icon-refresh\"></i> **Synchronize** sub-menu and by clicking **Open from...**. Once opened, any modification in your document will be automatically synchronized with the file in your **Google Drive** / **Dropbox** account.\r\n\r\n#### <i class=\"icon-refresh\"></i> Save a document\r\n\r\nYou can save any document by opening the <i class=\"icon-refresh\"></i> **Synchronize** sub-menu and by clicking **Save on...**. Even if your document is already synchronized with **Google Drive** or **Dropbox**, you can export it to a another location. StackEdit can synchronize one document with multiple locations and accounts.\r\n\r\n#### <i class=\"icon-refresh\"></i> Synchronize a document\r\n\r\nOnce your document is linked to a <i class=\"icon-provider-gdrive\"></i> **Google Drive** or a <i class=\"icon-provider-dropbox\"></i> **Dropbox** file, StackEdit will periodically (every 3 minutes) synchronize it by downloading/uploading any modification. A merge will be performed if necessary and conflicts will be detected.\r\n\r\nIf you just have modified your document and you want to force the synchronization, click the <i class=\"icon-refresh\"></i> button in the navigation bar.\r\n\r\n> **Note:** The <i class=\"icon-refresh\"></i> button is disabled when you have no document to synchronize.\r\n\r\n#### <i class=\"icon-refresh\"></i> Manage document synchronization\r\n\r\nSince one document can be synchronized with multiple locations, you can list and manage synchronized locations by clicking <i class=\"icon-refresh\"></i> **Manage synchronization** in the <i class=\"icon-refresh\"></i> **Synchronize** sub-menu. This will let you remove synchronization locations that are associated to your document.\r\n\r\n> **Note:** If you delete the file from **Google Drive** or from **Dropbox**, the document will no longer be synchronized with that location.\r\n\r\n----------\r\n\r\n\r\nPublication\r\n-------------\r\n\r\nOnce you are happy with your document, you can publish it on different websites directly from StackEdit. As for now, StackEdit can publish on **Blogger**, **Dropbox**, **Gist**, **GitHub**, **Google Drive**, **Tumblr**, **WordPress** and on any SSH server.\r\n\r\n#### <i class=\"icon-upload\"></i> Publish a document\r\n\r\nYou can publish your document by opening the <i class=\"icon-upload\"></i> **Publish** sub-menu and by choosing a website. In the dialog box, you can choose the publication format:\r\n\r\n- Markdown, to publish the Markdown text on a website that can interpret it (**GitHub** for instance),\r\n- HTML, to publish the document converted into HTML (on a blog for example),\r\n- Template, to have a full control of the output.\r\n\r\n> **Note:** The default template is a simple webpage wrapping your document in HTML format. You can customize it in the **Advanced** tab of the <i class=\"icon-cog\"></i> **Settings** dialog.\r\n\r\n#### <i class=\"icon-upload\"></i> Update a publication\r\n\r\nAfter publishing, StackEdit will keep your document linked to that publication which makes it easy for you to update it. Once you have modified your document and you want to update your publication, click on the <i class=\"icon-upload\"></i> button in the navigation bar.\r\n\r\n> **Note:** The <i class=\"icon-upload\"></i> button is disabled when your document has not been published yet.\r\n\r\n#### <i class=\"icon-upload\"></i> Manage document publication\r\n\r\nSince one document can be published on multiple locations, you can list and manage publish locations by clicking <i class=\"icon-upload\"></i> **Manage publication** in the <i class=\"icon-provider-stackedit\"></i> menu panel. This will let you remove publication locations that are associated to your document.\r\n\r\n> **Note:** If the file has been removed from the website or the blog, the document will no longer be published on that location.\r\n\r\n----------\r\n\r\n\r\nMarkdown Extra\r\n--------------------\r\n\r\nStackEdit supports **Markdown Extra**, which extends **Markdown** syntax with some nice features.\r\n\r\n> **Tip:** You can disable any **Markdown Extra** feature in the **Extensions** tab of the <i class=\"icon-cog\"></i> **Settings** dialog.\r\n\r\n> **Note:** You can find more information about **Markdown** syntax [here][2] and **Markdown Extra** extension [here][3].\r\n\r\n\r\n### Tables\r\n\r\n**Markdown Extra** has a special syntax for tables:\r\n\r\nItem     | Value\r\n-------- | ---\r\nComputer | $1600\r\nPhone    | $12\r\nPipe     | $1\r\n\r\nYou can specify column alignment with one or two colons:\r\n\r\n| Item     | Value | Qty   |\r\n| :------- | ----: | :---: |\r\n| Computer | $1600 |  5    |\r\n| Phone    | $12   |  12   |\r\n| Pipe     | $1    |  234  |\r\n\r\n\r\n### Definition Lists\r\n\r\n**Markdown Extra** has a special syntax for definition lists too:\r\n\r\nTerm 1\r\nTerm 2\r\n:   Definition A\r\n:   Definition B\r\n\r\nTerm 3\r\n\r\n:   Definition C\r\n\r\n:   Definition D\r\n\r\n\t> part of definition D\r\n\r\n\r\n### Fenced code blocks\r\n\r\nGitHub's fenced code blocks are also supported with **Highlight.js** syntax highlighting:\r\n\r\n```\r\n// Foo\r\nvar bar = 0;\r\n```\r\n\r\n> **Tip:** To use **Prettify** instead of **Highlight.js**, just configure the **Markdown Extra** extension in the <i class=\"icon-cog\"></i> **Settings** dialog.\r\n\r\n> **Note:** You can find more information:\r\n\r\n> - about **Prettify** syntax highlighting [here][5],\r\n> - about **Highlight.js** syntax highlighting [here][6].\r\n\r\n\r\n### Footnotes\r\n\r\nYou can create footnotes like this[^footnote].\r\n\r\n  [^footnote]: Here is the *text* of the **footnote**.\r\n\r\n\r\n### SmartyPants\r\n\r\nSmartyPants converts ASCII punctuation characters into \"smart\" typographic punctuation HTML entities. For example:\r\n\r\n|                  | ASCII                        | HTML              |\r\n ----------------- | ---------------------------- | ------------------\r\n| Single backticks | `'Isn't this fun?'`            | 'Isn't this fun?' |\r\n| Quotes           | `\"Isn't this fun?\"`            | \"Isn't this fun?\" |\r\n| Dashes           | `-- is en-dash, --- is em-dash` | -- is en-dash, --- is em-dash |\r\n\r\n\r\n### Table of contents\r\n\r\nYou can insert a table of contents using the marker `[TOC]`:\r\n\r\n[TOC]\r\n\r\n\r\n### MathJax\r\n\r\nYou can render *LaTeX* mathematical expressions using **MathJax**, as on [math.stackexchange.com][1]:\r\n\r\nThe *Gamma function* satisfying $\\Gamma(n) = (n-1)!\\quad\\forall n\\in\\mathbb N$ is via the Euler integral\r\n\r\n$$\r\n\\Gamma(z) = \\int_0^\\infty t^{z-1}e^{-t}dt\\,.\r\n$$\r\n\r\n> **Tip:** To make sure mathematical expressions are rendered properly on your website, include **MathJax** into your template:\r\n\r\n```\r\n<script type=\"text/javascript\" src=\"https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML\"></script>\r\n```\r\n\r\n> **Note:** You can find more information about **LaTeX** mathematical expressions [here][4].\r\n\r\n\r\n### UML diagrams\r\n\r\nYou can also render sequence diagrams like this:\r\n\r\n```sequence\r\nAlice->Bob: Hello Bob, how are you?\r\nNote right of Bob: Bob thinks\r\nBob-->Alice: I am good thanks!\r\n```\r\n\r\nAnd flow charts like this:\r\n\r\n```flow\r\nst=>start: Start\r\ne=>end\r\nop=>operation: My Operation\r\ncond=>condition: Yes or No?\r\n\r\nst->op->cond\r\ncond(yes)->e\r\ncond(no)->op\r\n```\r\n\r\n> **Note:** You can find more information:\r\n\r\n> - about **Sequence diagrams** syntax [here][7],\r\n> - about **Flow charts** syntax [here][8].\r\n\r\n### Support StackEdit\r\n\r\n[![](https://cdn.monetizejs.com/resources/button-32.png)](https://monetizejs.com/authorize?client_id=ESTHdCYOi18iLhhO&summary=true)\r\n\r\n  [^stackedit]: [StackEdit](https://stackedit.io/) is a full-featured, open-source Markdown editor based on PageDown, the Markdown library used by Stack Overflow and the other Stack Exchange sites.\r\n\r\n\r\n  [1]: http://math.stackexchange.com/\r\n  [2]: http://daringfireball.net/projects/markdown/syntax \"Markdown\"\r\n  [3]: https://github.com/jmcmanus/pagedown-extra \"Pagedown Extra\"\r\n  [4]: http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference\r\n  [5]: https://code.google.com/p/google-code-prettify/\r\n  [6]: http://highlightjs.org/\r\n  [7]: http://bramp.github.io/js-sequence-diagrams/\r\n  [8]: http://adrai.github.io/flowchart.js/\r\n"], ["updated_at", 2017-02-27 14:50:41 UTC], ["id", 1]]
+  [1m[35m (13.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 34ms (ActiveRecord: 16.6ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-27 17:50:41 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (6.2ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (42.2ms)
+Completed 200 OK in 113ms (Views: 108.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-28 18:33:13 +0300
+Started GET "/" for 127.0.0.1 at 2017-02-28 18:33:14 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (37.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (38.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+Processing by HomeController#index as HTML
+  Rendering home/index.html.haml within layouts/application
+  Rendering home/index.html.haml within layouts/application
+  Rendered home/index.html.haml within layouts/application (7.3ms)
+  Rendered home/index.html.haml within layouts/application (0.6ms)
+Completed 200 OK in 878ms (Views: 858.8ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 889ms (Views: 861.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2017-02-28 18:33:20 +0300
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (3.3ms)
+  [1m[36mPost Load (69.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at desc[0m
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY created_at ASC LIMIT $1[0m  [["LIMIT", 5]]
+  Rendered posts/index.html.haml within layouts/application (204.5ms)
+Completed 200 OK in 308ms (Views: 111.2ms | ActiveRecord: 149.4ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 18:34:02 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (24.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (8.7ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (41.3ms)
+Completed 200 OK in 218ms (Views: 126.8ms | ActiveRecord: 29.7ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 18:35:29 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (5.2ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (18.9ms)
+Completed 200 OK in 2723ms (Views: 2718.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 18:36:50 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (5.2ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (17.7ms)
+Completed 200 OK in 2310ms (Views: 2304.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 18:37:25 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.5ms)
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (16.5ms)
+Completed 200 OK in 76ms (Views: 72.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 18:37:52 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.4ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (15.8ms)
+Completed 200 OK in 2171ms (Views: 2167.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/posts/edit" for 127.0.0.1 at 2017-02-28 18:38:13 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"edit"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=edit):
+  
+app/controllers/posts_controller.rb:49:in `set_post'
+  Rendering /home/alperen/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/alperen/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/alperen/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.7ms)
+  Rendering /home/alperen/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/alperen/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /home/alperen/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/alperen/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/alperen/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (40.4ms)
+Started GET "/posts/1/edit" for 127.0.0.1 at 2017-02-28 18:38:20 +0300
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+Completed 401 Unauthorized in 45ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-02-28 18:38:20 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (47.1ms)
+Completed 200 OK in 163ms (Views: 131.4ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-02-28 18:38:29 +0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pu1B/lA1Gl/lKEI+/nflNFf9kphai7ECrMJ/VRzjCc9E77WLkrs6S4ckRtp+qXmtpgTALEHsTjwffSWRYk6BFw==", "user"=>{"email"=>"deneme@deneme.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (73.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "deneme@deneme.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "sign_in_count" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["current_sign_in_at", 2017-02-28 15:38:29 UTC], ["sign_in_count", 2], ["updated_at", 2017-02-28 15:38:29 UTC], ["id", 1]]
+  [1m[35m (39.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/posts/1/edit
+Completed 302 Found in 460ms (ActiveRecord: 113.5ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at 2017-02-28 18:38:29 +0300
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/edit.html.haml within layouts/application
+  Rendered posts/_form.html.haml (18.8ms)
+  Rendered posts/edit.html.haml within layouts/application (21.7ms)
+Completed 200 OK in 87ms (Views: 75.0ms | ActiveRecord: 1.4ms)
+
+
+Started PATCH "/posts/1" for 127.0.0.1 at 2017-02-28 18:38:53 +0300
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nhB9a3jfbnnuYOGS/8Hzk6bjWtn6pfTuUi8iensctHBLYhi4/B8JzCoDlhpftosr7wQUcDYxbOMQkJZ75Y0PnQ==", "post"=>{"title"=>"Deneme Markdown", "body"=>"! I'm your first Markdown document in **StackEdit**[^stackedit]. Don't delete me, I'm very helpful! I can be recovered anyway in the **Utils** tab of the <i class=\"icon-cog\"></i> **Settings** dialog.\r\n\r\n  ----------\r\n\r\n\r\n  Documents\r\n  -------------\r\n\r\n  StackEdit stores your documents in your browser, which means all your documents are automatically saved locally and are accessible **offline!**\r\n\r\n  > **Note:**\r\n\r\n  > - StackEdit is accessible offline after the application has been loaded for the first time.\r\n  > - Your local documents are not shared between different browsers or computers.\r\n  > - Clearing your browser's data may **delete all your local documents!** Make sure your documents are synchronized with **Google Drive** or **Dropbox** (check out the [<i class=\"icon-refresh\"></i> Synchronization](#synchronization) section).\r\n\r\n  #### <i class=\"icon-file\"></i> Create a document\r\n\r\n  The document panel is accessible using the <i class=\"icon-folder-open\"></i> button in the navigation bar. You can create a new document by clicking <i class=\"icon-file\"></i> **New document** in the document panel.\r\n\r\n  #### <i class=\"icon-folder-open\"></i> Switch to another document\r\n\r\n  All your local documents are listed in the document panel. You can switch from one to another by clicking a document in the list or you can toggle documents using <kbd>Ctrl+[</kbd> and <kbd>Ctrl+]</kbd>.\r\n\r\n  #### <i class=\"icon-pencil\"></i> Rename a document\r\n\r\n  You can rename the current document by clicking the document title in the navigation bar.\r\n\r\n  #### <i class=\"icon-trash\"></i> Delete a document\r\n\r\n  You can delete the current document by clicking <i class=\"icon-trash\"></i> **Delete document** in the document panel.\r\n\r\n  #### <i class=\"icon-hdd\"></i> Export a document\r\n\r\n  You can save the current document to a file by clicking <i class=\"icon-hdd\"></i> **Export to disk** from the <i class=\"icon-provider-stackedit\"></i> menu panel.\r\n\r\n  > **Tip:** Check out the [<i class=\"icon-upload\"></i> Publish a document](#publish-a-document) section for a description of the different output formats.\r\n\r\n\r\n  ----------\r\n\r\n\r\n  Synchronization\r\n  -------------------\r\n\r\n  StackEdit can be combined with <i class=\"icon-provider-gdrive\"></i> **Google Drive** and <i class=\"icon-provider-dropbox\"></i> **Dropbox** to have your documents saved in the *Cloud*. The synchronization mechanism takes care of uploading your modifications or downloading the latest version of your documents.\r\n\r\n  > **Note:**\r\n\r\n  > - Full access to **Google Drive** or **Dropbox** is required to be able to import any document in StackEdit. Permission restrictions can be configured in the settings.\r\n  > - Imported documents are downloaded in your browser and are not transmitted to a server.\r\n  > - If you experience problems saving your documents on Google Drive, check and optionally disable browser extensions, such as Disconnect.\r\n\r\n  #### <i class=\"icon-refresh\"></i> Open a document\r\n\r\n  You can open a document from <i class=\"icon-provider-gdrive\"></i> **Google Drive** or the <i class=\"icon-provider-dropbox\"></i> **Dropbox** by opening the <i class=\"icon-refresh\"></i> **Synchronize** sub-menu and by clicking **Open from...**. Once opened, any modification in your document will be automatically synchronized with the file in your **Google Drive** / **Dropbox** account.\r\n\r\n  #### <i class=\"icon-refresh\"></i> Save a document\r\n\r\n  You can save any document by opening the <i class=\"icon-refresh\"></i> **Synchronize** sub-menu and by clicking **Save on...**. Even if your document is already synchronized with **Google Drive** or **Dropbox**, you can export it to a another location. StackEdit can synchronize one document with multiple locations and accounts.\r\n\r\n  #### <i class=\"icon-refresh\"></i> Synchronize a document\r\n\r\n  Once your document is linked to a <i class=\"icon-provider-gdrive\"></i> **Google Drive** or a <i class=\"icon-provider-dropbox\"></i> **Dropbox** file, StackEdit will periodically (every 3 minutes) synchronize it by downloading/uploading any modification. A merge will be performed if necessary and conflicts will be detected.\r\n\r\n  If you just have modified your document and you want to force the synchronization, click the <i class=\"icon-refresh\"></i> button in the navigation bar.\r\n\r\n  > **Note:** The <i class=\"icon-refresh\"></i> button is disabled when you have no document to synchronize.\r\n\r\n  #### <i class=\"icon-refresh\"></i> Manage document synchronization\r\n\r\n  Since one document can be synchronized with multiple locations, you can list and manage synchronized locations by clicking <i class=\"icon-refresh\"></i> **Manage synchronization** in the <i class=\"icon-refresh\"></i> **Synchronize** sub-menu. This will let you remove synchronization locations that are associated to your document.\r\n\r\n  > **Note:** If you delete the file from **Google Drive** or from **Dropbox**, the document will no longer be synchronized with that location.\r\n\r\n  ----------\r\n\r\n\r\n  Publication\r\n  -------------\r\n\r\n  Once you are happy with your document, you can publish it on different websites directly from StackEdit. As for now, StackEdit can publish on **Blogger**, **Dropbox**, **Gist**, **GitHub**, **Google Drive**, **Tumblr**, **WordPress** and on any SSH server.\r\n\r\n  #### <i class=\"icon-upload\"></i> Publish a document\r\n\r\n  You can publish your document by opening the <i class=\"icon-upload\"></i> **Publish** sub-menu and by choosing a website. In the dialog box, you can choose the publication format:\r\n\r\n  - Markdown, to publish the Markdown text on a website that can interpret it (**GitHub** for instance),\r\n  - HTML, to publish the document converted into HTML (on a blog for example),\r\n  - Template, to have a full control of the output.\r\n\r\n  > **Note:** The default template is a simple webpage wrapping your document in HTML format. You can customize it in the **Advanced** tab of the <i class=\"icon-cog\"></i> **Settings** dialog.\r\n\r\n  #### <i class=\"icon-upload\"></i> Update a publication\r\n\r\n  After publishing, StackEdit will keep your document linked to that publication which makes it easy for you to update it. Once you have modified your document and you want to update your publication, click on the <i class=\"icon-upload\"></i> button in the navigation bar.\r\n\r\n  > **Note:** The <i class=\"icon-upload\"></i> button is disabled when your document has not been published yet.\r\n\r\n  #### <i class=\"icon-upload\"></i> Manage document publication\r\n\r\n  Since one document can be published on multiple locations, you can list and manage publish locations by clicking <i class=\"icon-upload\"></i> **Manage publication** in the <i class=\"icon-provider-stackedit\"></i> menu panel. This will let you remove publication locations that are associated to your document.\r\n\r\n  > **Note:** If the file has been removed from the website or the blog, the document will no longer be published on that location.\r\n\r\n  ----------\r\n\r\n\r\n  Markdown Extra\r\n  --------------------\r\n\r\n  StackEdit supports **Markdown Extra**, which extends **Markdown** syntax with some nice features.\r\n\r\n  > **Tip:** You can disable any **Markdown Extra** feature in the **Extensions** tab of the <i class=\"icon-cog\"></i> **Settings** dialog.\r\n\r\n  > **Note:** You can find more information about **Markdown** syntax [here][2] and **Markdown Extra** extension [here][3].\r\n\r\n\r\n  ### Tables\r\n\r\n  **Markdown Extra** has a special syntax for tables:\r\n\r\n  Item     | Value\r\n  -------- | ---\r\n  Computer | $1600\r\n  Phone    | $12\r\n  Pipe     | $1\r\n\r\n  You can specify column alignment with one or two colons:\r\n\r\n  | Item     | Value | Qty   |\r\n  | :------- | ----: | :---: |\r\n  | Computer | $1600 |  5    |\r\n  | Phone    | $12   |  12   |\r\n  | Pipe     | $1    |  234  |\r\n\r\n\r\n  ### Definition Lists\r\n\r\n  **Markdown Extra** has a special syntax for definition lists too:\r\n\r\n  Term 1\r\n  Term 2\r\n  :   Definition A\r\n  :   Definition B\r\n\r\n  Term 3\r\n\r\n  :   Definition C\r\n\r\n  :   Definition D\r\n\r\n  \t> part of definition D\r\n\r\n\r\n  ### Fenced code blocks\r\n\r\n  GitHub's fenced code blocks are also supported with **Highlight.js** syntax highlighting:\r\n\r\n  ```\r\n  // Foo\r\n  var bar = 0;\r\n  ```\r\n\r\n  > **Tip:** To use **Prettify** instead of **Highlight.js**, just configure the **Markdown Extra** extension in the <i class=\"icon-cog\"></i> **Settings** dialog.\r\n\r\n  > **Note:** You can find more information:\r\n\r\n  > - about **Prettify** syntax highlighting [here][5],\r\n  > - about **Highlight.js** syntax highlighting [here][6].\r\n\r\n\r\n  ### Footnotes\r\n\r\n  You can create footnotes like this[^footnote].\r\n\r\n    [^footnote]: Here is the *text* of the **footnote**.\r\n\r\n\r\n  ### SmartyPants\r\n\r\n  SmartyPants converts ASCII punctuation characters into \"smart\" typographic punctuation HTML entities. For example:\r\n\r\n  |                  | ASCII                        | HTML              |\r\n   ----------------- | ---------------------------- | ------------------\r\n  | Single backticks | `'Isn't this fun?'`            | 'Isn't this fun?' |\r\n  | Quotes           | `\"Isn't this fun?\"`            | \"Isn't this fun?\" |\r\n  | Dashes           | `-- is en-dash, --- is em-dash` | -- is en-dash, --- is em-dash |\r\n\r\n\r\n  ### Table of contents\r\n\r\n  You can insert a table of contents using the marker `[TOC]`:\r\n\r\n  [TOC]\r\n\r\n\r\n  ### MathJax\r\n\r\n  You can render *LaTeX* mathematical expressions using **MathJax**, as on [math.stackexchange.com][1]:\r\n\r\n  The *Gamma function* satisfying $\\Gamma(n) = (n-1)!\\quad\\forall n\\in\\mathbb N$ is via the Euler integral\r\n\r\n  $$\r\n  \\Gamma(z) = \\int_0^\\infty t^{z-1}e^{-t}dt\\,.\r\n  $$\r\n\r\n  > **Tip:** To make sure mathematical expressions are rendered properly on your website, include **MathJax** into your template:\r\n\r\n  ```\r\n  <script type=\"text/javascript\" src=\"https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML\"></script>\r\n  ```\r\n\r\n  > **Note:** You can find more information about **LaTeX** mathematical expressions [here][4].\r\n\r\n\r\n  ### UML diagrams\r\n\r\n  You can also render sequence diagrams like this:\r\n\r\n  ```sequence\r\n  Alice->Bob: Hello Bob, how are you?\r\n  Note right of Bob: Bob thinks\r\n  Bob-->Alice: I am good thanks!\r\n  ```\r\n\r\n  And flow charts like this:\r\n\r\n  ```flow\r\n  st=>start: Start\r\n  e=>end\r\n  op=>operation: My Operation\r\n  cond=>condition: Yes or No?\r\n\r\n  st->op->cond\r\n  cond(yes)->e\r\n  cond(no)->op\r\n  ```\r\n\r\n  > **Note:** You can find more information:\r\n\r\n  > - about **Sequence diagrams** syntax [here][7],\r\n  > - about **Flow charts** syntax [here][8].\r\n\r\n  ### Support StackEdit\r\n\r\n  [![](https://cdn.monetizejs.com/resources/button-32.png)](https://monetizejs.com/authorize?client_id=ESTHdCYOi18iLhhO&summary=true)\r\n\r\n    [^stackedit]: [StackEdit](https://stackedit.io/) is a full-featured, open-source Markdown editor based on PageDown, the Markdown library used by Stack Overflow and the other Stack Exchange sites.\r\n\r\n\r\n    [1]: http://math.stackexchange.com/\r\n    [2]: http://daringfireball.net/projects/markdown/syntax \"Markdown\"\r\n    [3]: https://github.com/jmcmanus/pagedown-extra \"Pagedown Extra\"\r\n    [4]: http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference\r\n    [5]: https://code.google.com/p/google-code-prettify/\r\n    [6]: http://highlightjs.org/\r\n    [7]: http://bramp.github.io/js-sequence-diagrams/\r\n    [8]: http://adrai.github.io/flowchart.js/\r\n  ", "category_id"=>"1"}, "button"=>"", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.7ms)[0m  [1m[33mUPDATE "posts" SET "title" = $1, "body" = $2, "updated_at" = $3 WHERE "posts"."id" = $4[0m  [["title", "Deneme Markdown"], ["body", "! I'm your first Markdown document in **StackEdit**[^stackedit]. Don't delete me, I'm very helpful! I can be recovered anyway in the **Utils** tab of the <i class=\"icon-cog\"></i> **Settings** dialog.\r\n\r\n  ----------\r\n\r\n\r\n  Documents\r\n  -------------\r\n\r\n  StackEdit stores your documents in your browser, which means all your documents are automatically saved locally and are accessible **offline!**\r\n\r\n  > **Note:**\r\n\r\n  > - StackEdit is accessible offline after the application has been loaded for the first time.\r\n  > - Your local documents are not shared between different browsers or computers.\r\n  > - Clearing your browser's data may **delete all your local documents!** Make sure your documents are synchronized with **Google Drive** or **Dropbox** (check out the [<i class=\"icon-refresh\"></i> Synchronization](#synchronization) section).\r\n\r\n  #### <i class=\"icon-file\"></i> Create a document\r\n\r\n  The document panel is accessible using the <i class=\"icon-folder-open\"></i> button in the navigation bar. You can create a new document by clicking <i class=\"icon-file\"></i> **New document** in the document panel.\r\n\r\n  #### <i class=\"icon-folder-open\"></i> Switch to another document\r\n\r\n  All your local documents are listed in the document panel. You can switch from one to another by clicking a document in the list or you can toggle documents using <kbd>Ctrl+[</kbd> and <kbd>Ctrl+]</kbd>.\r\n\r\n  #### <i class=\"icon-pencil\"></i> Rename a document\r\n\r\n  You can rename the current document by clicking the document title in the navigation bar.\r\n\r\n  #### <i class=\"icon-trash\"></i> Delete a document\r\n\r\n  You can delete the current document by clicking <i class=\"icon-trash\"></i> **Delete document** in the document panel.\r\n\r\n  #### <i class=\"icon-hdd\"></i> Export a document\r\n\r\n  You can save the current document to a file by clicking <i class=\"icon-hdd\"></i> **Export to disk** from the <i class=\"icon-provider-stackedit\"></i> menu panel.\r\n\r\n  > **Tip:** Check out the [<i class=\"icon-upload\"></i> Publish a document](#publish-a-document) section for a description of the different output formats.\r\n\r\n\r\n  ----------\r\n\r\n\r\n  Synchronization\r\n  -------------------\r\n\r\n  StackEdit can be combined with <i class=\"icon-provider-gdrive\"></i> **Google Drive** and <i class=\"icon-provider-dropbox\"></i> **Dropbox** to have your documents saved in the *Cloud*. The synchronization mechanism takes care of uploading your modifications or downloading the latest version of your documents.\r\n\r\n  > **Note:**\r\n\r\n  > - Full access to **Google Drive** or **Dropbox** is required to be able to import any document in StackEdit. Permission restrictions can be configured in the settings.\r\n  > - Imported documents are downloaded in your browser and are not transmitted to a server.\r\n  > - If you experience problems saving your documents on Google Drive, check and optionally disable browser extensions, such as Disconnect.\r\n\r\n  #### <i class=\"icon-refresh\"></i> Open a document\r\n\r\n  You can open a document from <i class=\"icon-provider-gdrive\"></i> **Google Drive** or the <i class=\"icon-provider-dropbox\"></i> **Dropbox** by opening the <i class=\"icon-refresh\"></i> **Synchronize** sub-menu and by clicking **Open from...**. Once opened, any modification in your document will be automatically synchronized with the file in your **Google Drive** / **Dropbox** account.\r\n\r\n  #### <i class=\"icon-refresh\"></i> Save a document\r\n\r\n  You can save any document by opening the <i class=\"icon-refresh\"></i> **Synchronize** sub-menu and by clicking **Save on...**. Even if your document is already synchronized with **Google Drive** or **Dropbox**, you can export it to a another location. StackEdit can synchronize one document with multiple locations and accounts.\r\n\r\n  #### <i class=\"icon-refresh\"></i> Synchronize a document\r\n\r\n  Once your document is linked to a <i class=\"icon-provider-gdrive\"></i> **Google Drive** or a <i class=\"icon-provider-dropbox\"></i> **Dropbox** file, StackEdit will periodically (every 3 minutes) synchronize it by downloading/uploading any modification. A merge will be performed if necessary and conflicts will be detected.\r\n\r\n  If you just have modified your document and you want to force the synchronization, click the <i class=\"icon-refresh\"></i> button in the navigation bar.\r\n\r\n  > **Note:** The <i class=\"icon-refresh\"></i> button is disabled when you have no document to synchronize.\r\n\r\n  #### <i class=\"icon-refresh\"></i> Manage document synchronization\r\n\r\n  Since one document can be synchronized with multiple locations, you can list and manage synchronized locations by clicking <i class=\"icon-refresh\"></i> **Manage synchronization** in the <i class=\"icon-refresh\"></i> **Synchronize** sub-menu. This will let you remove synchronization locations that are associated to your document.\r\n\r\n  > **Note:** If you delete the file from **Google Drive** or from **Dropbox**, the document will no longer be synchronized with that location.\r\n\r\n  ----------\r\n\r\n\r\n  Publication\r\n  -------------\r\n\r\n  Once you are happy with your document, you can publish it on different websites directly from StackEdit. As for now, StackEdit can publish on **Blogger**, **Dropbox**, **Gist**, **GitHub**, **Google Drive**, **Tumblr**, **WordPress** and on any SSH server.\r\n\r\n  #### <i class=\"icon-upload\"></i> Publish a document\r\n\r\n  You can publish your document by opening the <i class=\"icon-upload\"></i> **Publish** sub-menu and by choosing a website. In the dialog box, you can choose the publication format:\r\n\r\n  - Markdown, to publish the Markdown text on a website that can interpret it (**GitHub** for instance),\r\n  - HTML, to publish the document converted into HTML (on a blog for example),\r\n  - Template, to have a full control of the output.\r\n\r\n  > **Note:** The default template is a simple webpage wrapping your document in HTML format. You can customize it in the **Advanced** tab of the <i class=\"icon-cog\"></i> **Settings** dialog.\r\n\r\n  #### <i class=\"icon-upload\"></i> Update a publication\r\n\r\n  After publishing, StackEdit will keep your document linked to that publication which makes it easy for you to update it. Once you have modified your document and you want to update your publication, click on the <i class=\"icon-upload\"></i> button in the navigation bar.\r\n\r\n  > **Note:** The <i class=\"icon-upload\"></i> button is disabled when your document has not been published yet.\r\n\r\n  #### <i class=\"icon-upload\"></i> Manage document publication\r\n\r\n  Since one document can be published on multiple locations, you can list and manage publish locations by clicking <i class=\"icon-upload\"></i> **Manage publication** in the <i class=\"icon-provider-stackedit\"></i> menu panel. This will let you remove publication locations that are associated to your document.\r\n\r\n  > **Note:** If the file has been removed from the website or the blog, the document will no longer be published on that location.\r\n\r\n  ----------\r\n\r\n\r\n  Markdown Extra\r\n  --------------------\r\n\r\n  StackEdit supports **Markdown Extra**, which extends **Markdown** syntax with some nice features.\r\n\r\n  > **Tip:** You can disable any **Markdown Extra** feature in the **Extensions** tab of the <i class=\"icon-cog\"></i> **Settings** dialog.\r\n\r\n  > **Note:** You can find more information about **Markdown** syntax [here][2] and **Markdown Extra** extension [here][3].\r\n\r\n\r\n  ### Tables\r\n\r\n  **Markdown Extra** has a special syntax for tables:\r\n\r\n  Item     | Value\r\n  -------- | ---\r\n  Computer | $1600\r\n  Phone    | $12\r\n  Pipe     | $1\r\n\r\n  You can specify column alignment with one or two colons:\r\n\r\n  | Item     | Value | Qty   |\r\n  | :------- | ----: | :---: |\r\n  | Computer | $1600 |  5    |\r\n  | Phone    | $12   |  12   |\r\n  | Pipe     | $1    |  234  |\r\n\r\n\r\n  ### Definition Lists\r\n\r\n  **Markdown Extra** has a special syntax for definition lists too:\r\n\r\n  Term 1\r\n  Term 2\r\n  :   Definition A\r\n  :   Definition B\r\n\r\n  Term 3\r\n\r\n  :   Definition C\r\n\r\n  :   Definition D\r\n\r\n  \t> part of definition D\r\n\r\n\r\n  ### Fenced code blocks\r\n\r\n  GitHub's fenced code blocks are also supported with **Highlight.js** syntax highlighting:\r\n\r\n  ```\r\n  // Foo\r\n  var bar = 0;\r\n  ```\r\n\r\n  > **Tip:** To use **Prettify** instead of **Highlight.js**, just configure the **Markdown Extra** extension in the <i class=\"icon-cog\"></i> **Settings** dialog.\r\n\r\n  > **Note:** You can find more information:\r\n\r\n  > - about **Prettify** syntax highlighting [here][5],\r\n  > - about **Highlight.js** syntax highlighting [here][6].\r\n\r\n\r\n  ### Footnotes\r\n\r\n  You can create footnotes like this[^footnote].\r\n\r\n    [^footnote]: Here is the *text* of the **footnote**.\r\n\r\n\r\n  ### SmartyPants\r\n\r\n  SmartyPants converts ASCII punctuation characters into \"smart\" typographic punctuation HTML entities. For example:\r\n\r\n  |                  | ASCII                        | HTML              |\r\n   ----------------- | ---------------------------- | ------------------\r\n  | Single backticks | `'Isn't this fun?'`            | 'Isn't this fun?' |\r\n  | Quotes           | `\"Isn't this fun?\"`            | \"Isn't this fun?\" |\r\n  | Dashes           | `-- is en-dash, --- is em-dash` | -- is en-dash, --- is em-dash |\r\n\r\n\r\n  ### Table of contents\r\n\r\n  You can insert a table of contents using the marker `[TOC]`:\r\n\r\n  [TOC]\r\n\r\n\r\n  ### MathJax\r\n\r\n  You can render *LaTeX* mathematical expressions using **MathJax**, as on [math.stackexchange.com][1]:\r\n\r\n  The *Gamma function* satisfying $\\Gamma(n) = (n-1)!\\quad\\forall n\\in\\mathbb N$ is via the Euler integral\r\n\r\n  $$\r\n  \\Gamma(z) = \\int_0^\\infty t^{z-1}e^{-t}dt\\,.\r\n  $$\r\n\r\n  > **Tip:** To make sure mathematical expressions are rendered properly on your website, include **MathJax** into your template:\r\n\r\n  ```\r\n  <script type=\"text/javascript\" src=\"https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML\"></script>\r\n  ```\r\n\r\n  > **Note:** You can find more information about **LaTeX** mathematical expressions [here][4].\r\n\r\n\r\n  ### UML diagrams\r\n\r\n  You can also render sequence diagrams like this:\r\n\r\n  ```sequence\r\n  Alice->Bob: Hello Bob, how are you?\r\n  Note right of Bob: Bob thinks\r\n  Bob-->Alice: I am good thanks!\r\n  ```\r\n\r\n  And flow charts like this:\r\n\r\n  ```flow\r\n  st=>start: Start\r\n  e=>end\r\n  op=>operation: My Operation\r\n  cond=>condition: Yes or No?\r\n\r\n  st->op->cond\r\n  cond(yes)->e\r\n  cond(no)->op\r\n  ```\r\n\r\n  > **Note:** You can find more information:\r\n\r\n  > - about **Sequence diagrams** syntax [here][7],\r\n  > - about **Flow charts** syntax [here][8].\r\n\r\n  ### Support StackEdit\r\n\r\n  [![](https://cdn.monetizejs.com/resources/button-32.png)](https://monetizejs.com/authorize?client_id=ESTHdCYOi18iLhhO&summary=true)\r\n\r\n    [^stackedit]: [StackEdit](https://stackedit.io/) is a full-featured, open-source Markdown editor based on PageDown, the Markdown library used by Stack Overflow and the other Stack Exchange sites.\r\n\r\n\r\n    [1]: http://math.stackexchange.com/\r\n    [2]: http://daringfireball.net/projects/markdown/syntax \"Markdown\"\r\n    [3]: https://github.com/jmcmanus/pagedown-extra \"Pagedown Extra\"\r\n    [4]: http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference\r\n    [5]: https://code.google.com/p/google-code-prettify/\r\n    [6]: http://highlightjs.org/\r\n    [7]: http://bramp.github.io/js-sequence-diagrams/\r\n    [8]: http://adrai.github.io/flowchart.js/\r\n  "], ["updated_at", 2017-02-28 15:38:53 UTC], ["id", 1]]
+  [1m[35m (40.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 53ms (ActiveRecord: 43.7ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 18:38:53 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.9ms)
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (17.6ms)
+Completed 200 OK in 76ms (Views: 71.7ms | ActiveRecord: 1.8ms)
+
+
+Started PATCH "/posts/1" for 127.0.0.1 at 2017-02-28 18:39:16 +0300
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nhB9a3jfbnnuYOGS/8Hzk6bjWtn6pfTuUi8iensctHBLYhi4/B8JzCoDlhpftosr7wQUcDYxbOMQkJZ75Y0PnQ==", "post"=>{"title"=>"Blog Deneme", "body"=>"! I'm your first Markdown document in **StackEdit**[^stackedit]. Don't delete me, I'm very helpful! I can be recovered anyway in the **Utils** tab of the <i class=\"icon-cog\"></i> **Settings** dialog.\r\n\r\n  ----------\r\n\r\n\r\n  Documents\r\n  -------------\r\n\r\n  StackEdit stores your documents in your browser, which means all your documents are automatically saved locally and are accessible **offline!**\r\n\r\n  > **Note:**\r\n\r\n  > - StackEdit is accessible offline after the application has been loaded for the first time.\r\n  > - Your local documents are not shared between different browsers or computers.\r\n  > - Clearing your browser's data may **delete all your local documents!** Make sure your documents are synchronized with **Google Drive** or **Dropbox** (check out the [<i class=\"icon-refresh\"></i> Synchronization](#synchronization) section).\r\n\r\n  #### <i class=\"icon-file\"></i> Create a document\r\n\r\n  The document panel is accessible using the <i class=\"icon-folder-open\"></i> button in the navigation bar. You can create a new document by clicking <i class=\"icon-file\"></i> **New document** in the document panel.\r\n\r\n  #### <i class=\"icon-folder-open\"></i> Switch to another document\r\n\r\n  All your local documents are listed in the document panel. You can switch from one to another by clicking a document in the list or you can toggle documents using <kbd>Ctrl+[</kbd> and <kbd>Ctrl+]</kbd>.\r\n\r\n  #### <i class=\"icon-pencil\"></i> Rename a document\r\n\r\n  You can rename the current document by clicking the document title in the navigation bar.\r\n\r\n  #### <i class=\"icon-trash\"></i> Delete a document\r\n\r\n  You can delete the current document by clicking <i class=\"icon-trash\"></i> **Delete document** in the document panel.\r\n\r\n  #### <i class=\"icon-hdd\"></i> Export a document\r\n\r\n  You can save the current document to a file by clicking <i class=\"icon-hdd\"></i> **Export to disk** from the <i class=\"icon-provider-stackedit\"></i> menu panel.\r\n\r\n  > **Tip:** Check out the [<i class=\"icon-upload\"></i> Publish a document](#publish-a-document) section for a description of the different output formats.\r\n\r\n\r\n  ----------\r\n\r\n\r\n  Synchronization\r\n  -------------------\r\n\r\n  StackEdit can be combined with <i class=\"icon-provider-gdrive\"></i> **Google Drive** and <i class=\"icon-provider-dropbox\"></i> **Dropbox** to have your documents saved in the *Cloud*. The synchronization mechanism takes care of uploading your modifications or downloading the latest version of your documents.\r\n\r\n  > **Note:**\r\n\r\n  > - Full access to **Google Drive** or **Dropbox** is required to be able to import any document in StackEdit. Permission restrictions can be configured in the settings.\r\n  > - Imported documents are downloaded in your browser and are not transmitted to a server.\r\n  > - If you experience problems saving your documents on Google Drive, check and optionally disable browser extensions, such as Disconnect.\r\n\r\n  #### <i class=\"icon-refresh\"></i> Open a document\r\n\r\n  You can open a document from <i class=\"icon-provider-gdrive\"></i> **Google Drive** or the <i class=\"icon-provider-dropbox\"></i> **Dropbox** by opening the <i class=\"icon-refresh\"></i> **Synchronize** sub-menu and by clicking **Open from...**. Once opened, any modification in your document will be automatically synchronized with the file in your **Google Drive** / **Dropbox** account.\r\n\r\n  #### <i class=\"icon-refresh\"></i> Save a document\r\n\r\n  You can save any document by opening the <i class=\"icon-refresh\"></i> **Synchronize** sub-menu and by clicking **Save on...**. Even if your document is already synchronized with **Google Drive** or **Dropbox**, you can export it to a another location. StackEdit can synchronize one document with multiple locations and accounts.\r\n\r\n  #### <i class=\"icon-refresh\"></i> Synchronize a document\r\n\r\n  Once your document is linked to a <i class=\"icon-provider-gdrive\"></i> **Google Drive** or a <i class=\"icon-provider-dropbox\"></i> **Dropbox** file, StackEdit will periodically (every 3 minutes) synchronize it by downloading/uploading any modification. A merge will be performed if necessary and conflicts will be detected.\r\n\r\n  If you just have modified your document and you want to force the synchronization, click the <i class=\"icon-refresh\"></i> button in the navigation bar.\r\n\r\n  > **Note:** The <i class=\"icon-refresh\"></i> button is disabled when you have no document to synchronize.\r\n\r\n  #### <i class=\"icon-refresh\"></i> Manage document synchronization\r\n\r\n  Since one document can be synchronized with multiple locations, you can list and manage synchronized locations by clicking <i class=\"icon-refresh\"></i> **Manage synchronization** in the <i class=\"icon-refresh\"></i> **Synchronize** sub-menu. This will let you remove synchronization locations that are associated to your document.\r\n\r\n  > **Note:** If you delete the file from **Google Drive** or from **Dropbox**, the document will no longer be synchronized with that location.\r\n\r\n  ----------\r\n\r\n\r\n  Publication\r\n  -------------\r\n\r\n  Once you are happy with your document, you can publish it on different websites directly from StackEdit. As for now, StackEdit can publish on **Blogger**, **Dropbox**, **Gist**, **GitHub**, **Google Drive**, **Tumblr**, **WordPress** and on any SSH server.\r\n\r\n  #### <i class=\"icon-upload\"></i> Publish a document\r\n\r\n  You can publish your document by opening the <i class=\"icon-upload\"></i> **Publish** sub-menu and by choosing a website. In the dialog box, you can choose the publication format:\r\n\r\n  - Markdown, to publish the Markdown text on a website that can interpret it (**GitHub** for instance),\r\n  - HTML, to publish the document converted into HTML (on a blog for example),\r\n  - Template, to have a full control of the output.\r\n\r\n  > **Note:** The default template is a simple webpage wrapping your document in HTML format. You can customize it in the **Advanced** tab of the <i class=\"icon-cog\"></i> **Settings** dialog.\r\n\r\n  #### <i class=\"icon-upload\"></i> Update a publication\r\n\r\n  After publishing, StackEdit will keep your document linked to that publication which makes it easy for you to update it. Once you have modified your document and you want to update your publication, click on the <i class=\"icon-upload\"></i> button in the navigation bar.\r\n\r\n  > **Note:** The <i class=\"icon-upload\"></i> button is disabled when your document has not been published yet.\r\n\r\n  #### <i class=\"icon-upload\"></i> Manage document publication\r\n\r\n  Since one document can be published on multiple locations, you can list and manage publish locations by clicking <i class=\"icon-upload\"></i> **Manage publication** in the <i class=\"icon-provider-stackedit\"></i> menu panel. This will let you remove publication locations that are associated to your document.\r\n\r\n  > **Note:** If the file has been removed from the website or the blog, the document will no longer be published on that location.\r\n\r\n  ----------\r\n\r\n\r\n  Markdown Extra\r\n  --------------------\r\n\r\n  StackEdit supports **Markdown Extra**, which extends **Markdown** syntax with some nice features.\r\n\r\n  > **Tip:** You can disable any **Markdown Extra** feature in the **Extensions** tab of the <i class=\"icon-cog\"></i> **Settings** dialog.\r\n\r\n  > **Note:** You can find more information about **Markdown** syntax [here][2] and **Markdown Extra** extension [here][3].\r\n\r\n\r\n  ### Tables\r\n\r\n  **Markdown Extra** has a special syntax for tables:\r\n\r\n  Item     | Value\r\n  -------- | ---\r\n  Computer | $1600\r\n  Phone    | $12\r\n  Pipe     | $1\r\n\r\n  You can specify column alignment with one or two colons:\r\n\r\n  | Item     | Value | Qty   |\r\n  | :------- | ----: | :---: |\r\n  | Computer | $1600 |  5    |\r\n  | Phone    | $12   |  12   |\r\n  | Pipe     | $1    |  234  |\r\n\r\n\r\n  ### Definition Lists\r\n\r\n  **Markdown Extra** has a special syntax for definition lists too:\r\n\r\n  Term 1\r\n  Term 2\r\n  :   Definition A\r\n  :   Definition B\r\n\r\n  Term 3\r\n\r\n  :   Definition C\r\n\r\n  :   Definition D\r\n\r\n  \t> part of definition D\r\n\r\n\r\n  ### Fenced code blocks\r\n\r\n  GitHub's fenced code blocks are also supported with **Highlight.js** syntax highlighting:\r\n\r\n  ```\r\n  // Foo\r\n  var bar = 0;\r\n  ```\r\n\r\n  > **Tip:** To use **Prettify** instead of **Highlight.js**, just configure the **Markdown Extra** extension in the <i class=\"icon-cog\"></i> **Settings** dialog.\r\n\r\n  > **Note:** You can find more information:\r\n\r\n  > - about **Prettify** syntax highlighting [here][5],\r\n  > - about **Highlight.js** syntax highlighting [here][6].\r\n\r\n\r\n  ### Footnotes\r\n\r\n  You can create footnotes like this[^footnote].\r\n\r\n    [^footnote]: Here is the *text* of the **footnote**.\r\n\r\n\r\n  ### SmartyPants\r\n\r\n  SmartyPants converts ASCII punctuation characters into \"smart\" typographic punctuation HTML entities. For example:\r\n\r\n  |                  | ASCII                        | HTML              |\r\n   ----------------- | ---------------------------- | ------------------\r\n  | Single backticks | `'Isn't this fun?'`            | 'Isn't this fun?' |\r\n  | Quotes           | `\"Isn't this fun?\"`            | \"Isn't this fun?\" |\r\n  | Dashes           | `-- is en-dash, --- is em-dash` | -- is en-dash, --- is em-dash |\r\n\r\n\r\n  ### Table of contents\r\n\r\n  You can insert a table of contents using the marker `[TOC]`:\r\n\r\n  [TOC]\r\n\r\n\r\n  ### MathJax\r\n\r\n  You can render *LaTeX* mathematical expressions using **MathJax**, as on [math.stackexchange.com][1]:\r\n\r\n  The *Gamma function* satisfying $\\Gamma(n) = (n-1)!\\quad\\forall n\\in\\mathbb N$ is via the Euler integral\r\n\r\n  $$\r\n  \\Gamma(z) = \\int_0^\\infty t^{z-1}e^{-t}dt\\,.\r\n  $$\r\n\r\n  > **Tip:** To make sure mathematical expressions are rendered properly on your website, include **MathJax** into your template:\r\n\r\n  ```\r\n  <script type=\"text/javascript\" src=\"https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML\"></script>\r\n  ```\r\n\r\n  > **Note:** You can find more information about **LaTeX** mathematical expressions [here][4].\r\n\r\n\r\n  ### UML diagrams\r\n\r\n  You can also render sequence diagrams like this:\r\n\r\n  ```sequence\r\n  Alice->Bob: Hello Bob, how are you?\r\n  Note right of Bob: Bob thinks\r\n  Bob-->Alice: I am good thanks!\r\n  ```\r\n\r\n  And flow charts like this:\r\n\r\n  ```flow\r\n  st=>start: Start\r\n  e=>end\r\n  op=>operation: My Operation\r\n  cond=>condition: Yes or No?\r\n\r\n  st->op->cond\r\n  cond(yes)->e\r\n  cond(no)->op\r\n  ```\r\n\r\n  > **Note:** You can find more information:\r\n\r\n  > - about **Sequence diagrams** syntax [here][7],\r\n  > - about **Flow charts** syntax [here][8].\r\n\r\n  ### Support StackEdit\r\n\r\n  [![](https://cdn.monetizejs.com/resources/button-32.png)](https://monetizejs.com/authorize?client_id=ESTHdCYOi18iLhhO&summary=true)\r\n\r\n    [^stackedit]: [StackEdit](https://stackedit.io/) is a full-featured, open-source Markdown editor based on PageDown, the Markdown library used by Stack Overflow and the other Stack Exchange sites.\r\n\r\n\r\n    [1]: http://math.stackexchange.com/\r\n    [2]: http://daringfireball.net/projects/markdown/syntax \"Markdown\"\r\n    [3]: https://github.com/jmcmanus/pagedown-extra \"Pagedown Extra\"\r\n    [4]: http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference\r\n    [5]: https://code.google.com/p/google-code-prettify/\r\n    [6]: http://highlightjs.org/\r\n    [7]: http://bramp.github.io/js-sequence-diagrams/\r\n    [8]: http://adrai.github.io/flowchart.js/\r\n  ", "category_id"=>"1"}, "button"=>"", "id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "posts" SET "title" = $1, "updated_at" = $2 WHERE "posts"."id" = $3[0m  [["title", "Blog Deneme"], ["updated_at", 2017-02-28 15:39:16 UTC], ["id", 1]]
+  [1m[35m (26.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 37ms (ActiveRecord: 28.7ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 18:39:16 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.4ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (14.2ms)
+Completed 200 OK in 70ms (Views: 66.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at 2017-02-28 18:39:39 +0300
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/edit.html.haml within layouts/application
+  Rendered posts/_form.html.haml (4.3ms)
+  Rendered posts/edit.html.haml within layouts/application (7.4ms)
+Completed 200 OK in 72ms (Views: 66.4ms | ActiveRecord: 1.3ms)
+
+
+Started PATCH "/posts/1" for 127.0.0.1 at 2017-02-28 18:40:43 +0300
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ntNo8LPRADEWi981PqeXZ4XmtsugQkFD5k3QKlZvRPlLoQ0jNxFnhNLoqL2e0O/fzAH4YmzW2U6k8mQryP7/FA==", "post"=>{"title"=>"Blog Deneme", "body"=>"ZSH NEDİR\r\n------", "category_id"=>"1"}, "button"=>"", "id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "posts" SET "body" = $1, "updated_at" = $2 WHERE "posts"."id" = $3[0m  [["body", "ZSH NEDİR\r\n------"], ["updated_at", 2017-02-28 15:40:43 UTC], ["id", 1]]
+  [1m[35m (40.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 56ms (ActiveRecord: 43.3ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 18:40:43 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.8ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (16.0ms)
+Completed 200 OK in 74ms (Views: 70.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 18:41:37 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (4.0ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (21.7ms)
+Completed 200 OK in 2432ms (Views: 2427.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 18:41:52 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (6.9ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (22.1ms)
+Completed 200 OK in 2398ms (Views: 2393.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/categories/1" for 127.0.0.1 at 2017-02-28 18:42:00 +0300
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering categories/show.html.haml within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."category_id" = $1[0m  [["category_id", 1]]
+  Rendered categories/show.html.haml within layouts/application (30.5ms)
+Completed 200 OK in 112ms (Views: 94.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 18:43:41 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (4.5ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (31.6ms)
+Completed 200 OK in 242ms (Views: 236.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 18:43:45 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.3ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (20.9ms)
+Completed 200 OK in 136ms (Views: 127.2ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at 2017-02-28 18:44:03 +0300
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/edit.html.haml within layouts/application
+  Rendered posts/_form.html.haml (7.4ms)
+  Rendered posts/edit.html.haml within layouts/application (10.0ms)
+Completed 200 OK in 81ms (Views: 73.3ms | ActiveRecord: 1.4ms)
+
+
+Started PATCH "/posts/1" for 127.0.0.1 at 2017-02-28 18:44:19 +0300
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7ukLxGpyDIcJ2+Y4sR5xEECL9hY/3iR+Xpwu9t3TO3lqVwiI1Edu+TkGr6aEx7c9hQKRG4SqeLmTJe3b8buZMw==", "post"=>{"title"=>"BLOG DENEME", "body"=>"Zsh Nedir\r\n-----\r\n\r\n", "category_id"=>"1"}, "button"=>"", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "posts" SET "title" = $1, "body" = $2, "updated_at" = $3 WHERE "posts"."id" = $4[0m  [["title", "BLOG DENEME"], ["body", "Zsh Nedir\r\n-----\r\n\r\n"], ["updated_at", 2017-02-28 15:44:19 UTC], ["id", 1]]
+  [1m[35m (24.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 37ms (ActiveRecord: 26.4ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 18:44:19 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.4ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (13.8ms)
+Completed 200 OK in 72ms (Views: 68.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 18:45:04 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (3.7ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (17.1ms)
+Completed 200 OK in 2964ms (Views: 2958.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 18:45:19 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.3ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (15.9ms)
+Completed 200 OK in 2322ms (Views: 2315.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 18:45:47 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (4.1ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (15.7ms)
+Completed 200 OK in 104ms (Views: 100.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 18:46:02 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (3.7ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (16.7ms)
+Completed 200 OK in 2249ms (Views: 2243.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at 2017-02-28 18:46:38 +0300
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/edit.html.haml within layouts/application
+  Rendered posts/_form.html.haml (6.2ms)
+  Rendered posts/edit.html.haml within layouts/application (8.6ms)
+Completed 200 OK in 93ms (Views: 86.9ms | ActiveRecord: 1.3ms)
+
+
+Started PATCH "/posts/1" for 127.0.0.1 at 2017-02-28 18:46:51 +0300
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"quNR0iKqA+//g+3bjZEWtHLXedaGCn8O5NEx/vsIzP0uXVKenJ9hkc9epEW4SNCZt14e2z1+I8kpaPLT12Butw==", "post"=>{"title"=>"BLOG DENEME", "body"=>"Zsh Nedir\r\n----", "category_id"=>"1"}, "button"=>"", "id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[33mUPDATE "posts" SET "body" = $1, "updated_at" = $2 WHERE "posts"."id" = $3[0m  [["body", "Zsh Nedir\r\n----"], ["updated_at", 2017-02-28 15:46:51 UTC], ["id", 1]]
+  [1m[35m (60.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 73ms (ActiveRecord: 62.6ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 18:46:51 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.5ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (14.8ms)
+Completed 200 OK in 77ms (Views: 71.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 18:48:24 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (5.6ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (23.0ms)
+Completed 200 OK in 2360ms (Views: 2352.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 18:48:49 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.1ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (16.4ms)
+Completed 200 OK in 2383ms (Views: 2379.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 18:49:12 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.0ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (14.4ms)
+Completed 200 OK in 2310ms (Views: 2306.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 18:49:24 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.1ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (12.2ms)
+Completed 200 OK in 2216ms (Views: 2210.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 18:49:43 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (4.5ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (18.0ms)
+Completed 200 OK in 2401ms (Views: 2397.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 18:49:55 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.1ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (14.5ms)
+Completed 200 OK in 2272ms (Views: 2268.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 18:50:13 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.6ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (20.5ms)
+Completed 200 OK in 84ms (Views: 80.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 18:50:45 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (3.0ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (19.1ms)
+Completed 200 OK in 2385ms (Views: 2380.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 18:50:56 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.3ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (14.4ms)
+Completed 200 OK in 2281ms (Views: 2275.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 18:51:08 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.7ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (15.5ms)
+Completed 200 OK in 2347ms (Views: 2342.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 18:51:25 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.2ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (17.9ms)
+Completed 200 OK in 2390ms (Views: 2385.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 18:51:43 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.4ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (14.3ms)
+Completed 200 OK in 2276ms (Views: 2271.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 18:51:59 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (3.8ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (15.0ms)
+Completed 200 OK in 2925ms (Views: 2919.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 18:52:16 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (4.4ms)
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (21.7ms)
+Completed 200 OK in 2415ms (Views: 2410.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 18:52:55 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.6ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (18.7ms)
+Completed 200 OK in 2357ms (Views: 2349.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 18:53:09 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (3.6ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (16.1ms)
+Completed 200 OK in 2389ms (Views: 2384.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 18:53:48 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (2.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.7ms)
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (16.7ms)
+Completed 200 OK in 2380ms (Views: 2370.4ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 18:54:02 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.5ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (17.9ms)
+Completed 200 OK in 105ms (Views: 98.7ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at 2017-02-28 18:54:12 +0300
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/edit.html.haml within layouts/application
+  Rendered posts/_form.html.haml (5.4ms)
+  Rendered posts/edit.html.haml within layouts/application (8.7ms)
+Completed 200 OK in 101ms (Views: 96.6ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/posts/1" for 127.0.0.1 at 2017-02-28 18:54:15 +0300
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JTzDP8gPmcYAbeWVBzO3WGPQ4fPocKWpxpq9a9D+/BChgsBzdjr7uDCwrAsy6nF1plmG/lME+W4LI35G/JZeWg==", "post"=>{"title"=>"BLOG DENEME", "body"=>"Zsh Nedir\r\n  ----\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n", "category_id"=>"1"}, "button"=>"", "id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "posts" SET "body" = $1, "updated_at" = $2 WHERE "posts"."id" = $3[0m  [["body", "Zsh Nedir\r\n  ----\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n"], ["updated_at", 2017-02-28 15:54:15 UTC], ["id", 1]]
+  [1m[35m (25.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 37ms (ActiveRecord: 27.0ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 18:54:15 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (3.5ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (14.0ms)
+Completed 200 OK in 74ms (Views: 70.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 18:54:34 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.4ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (16.9ms)
+Completed 200 OK in 2269ms (Views: 2265.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 18:54:49 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (4.3ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (19.4ms)
+Completed 200 OK in 125ms (Views: 120.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 19:17:11 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (3.0ms)
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (31.3ms)
+Completed 200 OK in 197ms (Views: 189.5ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at 2017-02-28 19:17:24 +0300
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/edit.html.haml within layouts/application
+  Rendered posts/_form.html.haml (10.6ms)
+  Rendered posts/edit.html.haml within layouts/application (13.1ms)
+Completed 200 OK in 88ms (Views: 80.0ms | ActiveRecord: 1.5ms)
+
+
+Started PATCH "/posts/1" for 127.0.0.1 at 2017-02-28 19:17:27 +0300
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GjgVOeNOji5os8SbpA/hlxpr1c2OD2lTYeZxBoAdMpeehhZ1XXvsUFhujQWR1ie63+KywDV7NZSsX7IrrHWQ3Q==", "post"=>{"title"=>"BLOG DENEME", "body"=>"ZSH ve OH MY ZSH\r\n===\r\n\r\nZsh Nedir ?\r\n---\r\n**Zsh**, komit dili yorumlayıcısı olan **bash**'ın bir alternatifidir. Bir çok pratik özelliği vardır. Bunlardan sadece **otomatik tamamlama** özelliği bile **zsh**'a geçmenize yeterlidir. \r\n\r\nNasıl Yüklerim\r\n---\r\n`sudo apt-get install zsh`\r\n\r\n\r\nOh My Zsh Nedir ?\r\n--\r\n**Oh my zsh** ~./zshrc dosyasını kolay bi şekilde düzenlemenizi sağlar. Çeşitli eklentiler ve Temalar sağlayarak terminalden işlerini daha kolay ve zevkle halletmenizi sağlar. Mesela git eklentisi sayesinde branşlarınızı commitlerinizi otomatik olarak tamamlayabilir. Siz her terminali açtığınızda güncelliğinizi kontrol eder. \r\n\r\n    sh -c \"$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)\"\r\n    ", "category_id"=>"1"}, "button"=>"", "id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "posts" SET "body" = $1, "updated_at" = $2 WHERE "posts"."id" = $3[0m  [["body", "ZSH ve OH MY ZSH\r\n===\r\n\r\nZsh Nedir ?\r\n---\r\n**Zsh**, komit dili yorumlayıcısı olan **bash**'ın bir alternatifidir. Bir çok pratik özelliği vardır. Bunlardan sadece **otomatik tamamlama** özelliği bile **zsh**'a geçmenize yeterlidir. \r\n\r\nNasıl Yüklerim\r\n---\r\n`sudo apt-get install zsh`\r\n\r\n\r\nOh My Zsh Nedir ?\r\n--\r\n**Oh my zsh** ~./zshrc dosyasını kolay bi şekilde düzenlemenizi sağlar. Çeşitli eklentiler ve Temalar sağlayarak terminalden işlerini daha kolay ve zevkle halletmenizi sağlar. Mesela git eklentisi sayesinde branşlarınızı commitlerinizi otomatik olarak tamamlayabilir. Siz her terminali açtığınızda güncelliğinizi kontrol eder. \r\n\r\n    sh -c \"$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)\"\r\n    "], ["updated_at", 2017-02-28 16:17:27 UTC], ["id", 1]]
+  [1m[35m (13.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 29ms (ActiveRecord: 16.1ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 19:17:27 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.4ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (12.9ms)
+Completed 200 OK in 74ms (Views: 70.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at 2017-02-28 19:18:39 +0300
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/edit.html.haml within layouts/application
+  Rendered posts/_form.html.haml (8.3ms)
+  Rendered posts/edit.html.haml within layouts/application (10.9ms)
+Completed 200 OK in 100ms (Views: 92.6ms | ActiveRecord: 2.4ms)
+
+
+Started PATCH "/posts/1" for 127.0.0.1 at 2017-02-28 19:18:43 +0300
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ROZDcHNctld8WmAwRhPVXKRA1sIql+xu7XtgkKJkXrjAWEA8zWnUKUyHKa5zyhNxYcmxz5HjsKkgwqO9jgz88g==", "post"=>{"title"=>"BLOG DENEME", "body"=>"ZSH ve OH MY ZSH\r\n===\r\n\r\nZsh Nedir ?\r\n---\r\n**Zsh**, komit dili yorumlayıcısı olan **bash**'ın bir alternatifidir. Bir çok pratik özelliği vardır. Bunlardan sadece **otomatik tamamlama** özelliği bile **zsh**'a geçmenize yeterlidir. \r\n\r\nNasıl Yüklerim\r\n---\r\n`sudo apt-get install zsh`\r\n\r\n\r\nOh My Zsh Nedir ?\r\n--\r\n**Oh my zsh** ~./zshrc dosyasını kolay bi şekilde düzenlemenizi sağlar. Çeşitli eklentiler ve Temalar sağlayarak terminalden işlerini daha kolay ve zevkle halletmenizi sağlar. Mesela git eklentisi sayesinde branşlarınızı commitlerinizi otomatik olarak tamamlayabilir. Siz her terminali açtığınızda güncelliğinizi kontrol eder. \r\n`sh -c \"$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)\"`", "category_id"=>"1"}, "button"=>"", "id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "posts" SET "body" = $1, "updated_at" = $2 WHERE "posts"."id" = $3[0m  [["body", "ZSH ve OH MY ZSH\r\n===\r\n\r\nZsh Nedir ?\r\n---\r\n**Zsh**, komit dili yorumlayıcısı olan **bash**'ın bir alternatifidir. Bir çok pratik özelliği vardır. Bunlardan sadece **otomatik tamamlama** özelliği bile **zsh**'a geçmenize yeterlidir. \r\n\r\nNasıl Yüklerim\r\n---\r\n`sudo apt-get install zsh`\r\n\r\n\r\nOh My Zsh Nedir ?\r\n--\r\n**Oh my zsh** ~./zshrc dosyasını kolay bi şekilde düzenlemenizi sağlar. Çeşitli eklentiler ve Temalar sağlayarak terminalden işlerini daha kolay ve zevkle halletmenizi sağlar. Mesela git eklentisi sayesinde branşlarınızı commitlerinizi otomatik olarak tamamlayabilir. Siz her terminali açtığınızda güncelliğinizi kontrol eder. \r\n`sh -c \"$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)\"`"], ["updated_at", 2017-02-28 16:18:43 UTC], ["id", 1]]
+  [1m[35m (12.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 26ms (ActiveRecord: 14.9ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 19:18:43 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.4ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (14.1ms)
+Completed 200 OK in 70ms (Views: 66.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 19:19:57 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.5ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (732.3ms)
+Completed 200 OK in 791ms (Views: 786.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 19:20:13 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.5ms)
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (20.2ms)
+Completed 200 OK in 82ms (Views: 78.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 19:20:42 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.4ms)
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (19.8ms)
+Completed 200 OK in 101ms (Views: 96.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 19:28:16 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.7ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (19.7ms)
+Completed 200 OK in 2379ms (Views: 2374.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 19:29:54 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.8ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (18.2ms)
+Completed 200 OK in 2532ms (Views: 2527.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 19:30:14 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (4.2ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (18.4ms)
+Completed 200 OK in 2375ms (Views: 2369.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 19:30:33 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (3.9ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (26.9ms)
+Completed 200 OK in 2352ms (Views: 2347.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 19:32:01 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.2ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (21.8ms)
+Completed 200 OK in 2434ms (Views: 2430.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 19:32:40 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.9ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (19.8ms)
+Completed 200 OK in 111ms (Views: 107.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 19:32:50 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.3ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (19.5ms)
+Completed 200 OK in 2320ms (Views: 2315.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 19:33:18 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.2ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (15.3ms)
+Completed 200 OK in 2210ms (Views: 2204.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 19:33:58 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.4ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (19.5ms)
+Completed 200 OK in 2215ms (Views: 2209.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at 2017-02-28 19:35:55 +0300
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/edit.html.haml within layouts/application
+  Rendered posts/_form.html.haml (6.4ms)
+  Rendered posts/edit.html.haml within layouts/application (8.6ms)
+Completed 200 OK in 87ms (Views: 81.7ms | ActiveRecord: 1.1ms)
+
+
+Started PATCH "/posts/1" for 127.0.0.1 at 2017-02-28 19:36:05 +0300
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"n3tvvMy2PYPvMp3AP2I5/DFpHDZsnVHUK/OKx2VwJ4gbxWzwcoNf/d/v1F4Ku//R9OB7O9fpDRPmSknqSRiFwg==", "post"=>{"title"=>"BLOG DENEME", "body"=>"ZSH ve OH MY ZSH\r\n  ===\r\n\r\n  Zsh Nedir ?\r\n  ---\r\n  **Zsh**, komit dili yorumlayıcısı olan **bash**'ın bir alternatifidir. Bir çok pratik özelliği vardır. Bunlardan sadece **otomatik tamamlama** özelliği bile **zsh**'a geçmenize yeterlidir. \r\n\r\n  Nasıl Yüklerim\r\n  ---\r\n  `sudo apt-get install zsh`\r\n\r\n\r\n  Oh My Zsh Nedir ?\r\n  --\r\n  **Oh my zsh** ~./zshrc dosyasını kolay bi şekilde düzenlemenizi sağlar. Çeşitli eklentiler ve Temalar sağlayarak terminalden işlerini daha kolay ve zevkle halletmenizi sağlar. Mesela git eklentisi sayesinde branşlarınızı commitlerinizi otomatik olarak tamamlayabilir. Siz her terminali açtığınızda güncelliğinizi kontrol eder. \r\n  `curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh\r\nchsh -s /bin/zsh`", "category_id"=>"1"}, "button"=>"", "id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "posts" SET "body" = $1, "updated_at" = $2 WHERE "posts"."id" = $3[0m  [["body", "ZSH ve OH MY ZSH\r\n  ===\r\n\r\n  Zsh Nedir ?\r\n  ---\r\n  **Zsh**, komit dili yorumlayıcısı olan **bash**'ın bir alternatifidir. Bir çok pratik özelliği vardır. Bunlardan sadece **otomatik tamamlama** özelliği bile **zsh**'a geçmenize yeterlidir. \r\n\r\n  Nasıl Yüklerim\r\n  ---\r\n  `sudo apt-get install zsh`\r\n\r\n\r\n  Oh My Zsh Nedir ?\r\n  --\r\n  **Oh my zsh** ~./zshrc dosyasını kolay bi şekilde düzenlemenizi sağlar. Çeşitli eklentiler ve Temalar sağlayarak terminalden işlerini daha kolay ve zevkle halletmenizi sağlar. Mesela git eklentisi sayesinde branşlarınızı commitlerinizi otomatik olarak tamamlayabilir. Siz her terminali açtığınızda güncelliğinizi kontrol eder. \r\n  `curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh\r\nchsh -s /bin/zsh`"], ["updated_at", 2017-02-28 16:36:05 UTC], ["id", 1]]
+  [1m[35m (11.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 25ms (ActiveRecord: 13.6ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 19:36:05 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.6ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (17.2ms)
+Completed 200 OK in 75ms (Views: 71.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 19:36:39 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.6ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (18.1ms)
+Completed 200 OK in 2550ms (Views: 2543.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 19:40:08 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.1ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (18.8ms)
+Completed 200 OK in 2310ms (Views: 2304.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 19:40:44 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.4ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (19.0ms)
+Completed 200 OK in 2429ms (Views: 2423.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 19:41:11 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.4ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (48.2ms)
+Completed 200 OK in 116ms (Views: 112.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 19:41:25 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (3.7ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (18.5ms)
+Completed 200 OK in 86ms (Views: 81.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 19:42:32 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.4ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (15.0ms)
+Completed 200 OK in 2286ms (Views: 2282.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 19:43:04 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.2ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (16.1ms)
+Completed 200 OK in 2343ms (Views: 2338.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at 2017-02-28 19:45:23 +0300
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/edit.html.haml within layouts/application
+  Rendered posts/_form.html.haml (4.8ms)
+  Rendered posts/edit.html.haml within layouts/application (32.7ms)
+Completed 200 OK in 100ms (Views: 93.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 19:47:24 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (3.3ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (20.6ms)
+Completed 200 OK in 92ms (Views: 86.5ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 19:47:46 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.8ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (19.9ms)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (The line was indented 2 levels deeper than the previous line.):
+    4:     <title>AlperenbozkurtNet</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/stylesheets/application.sass:564
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__70504696507796617_69822583429060'
+  Rendering /home/alperen/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/alperen/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/alperen/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (13.0ms)
+  Rendering /home/alperen/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/alperen/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendering /home/alperen/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/alperen/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/alperen/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (59.9ms)
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 19:48:02 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.6ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (16.3ms)
+Completed 200 OK in 84ms (Views: 80.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 19:49:07 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (4.6ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (17.7ms)
+Completed 200 OK in 2353ms (Views: 2349.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 19:51:47 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.8ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (18.9ms)
+Completed 200 OK in 94ms (Views: 90.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at 2017-02-28 19:54:39 +0300
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/edit.html.haml within layouts/application
+  Rendered posts/_form.html.haml (10.1ms)
+  Rendered posts/edit.html.haml within layouts/application (13.1ms)
+Completed 200 OK in 2776ms (Views: 2769.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/posts/1/edit" for 127.0.0.1 at 2017-02-28 19:54:54 +0300
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (1.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/edit.html.haml within layouts/application
+  Rendered posts/_form.html.haml (6.9ms)
+  Rendered posts/edit.html.haml within layouts/application (11.4ms)
+Completed 200 OK in 102ms (Views: 93.7ms | ActiveRecord: 2.6ms)
+
+
+Started PATCH "/posts/1" for 127.0.0.1 at 2017-02-28 19:54:58 +0300
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kEMb/15KQs3ddX2PLBn8LGQENUi3+T90O4mV3qR3TeBFMX4s2ooleBkWCgeMboSULeN74Xttp3l5NiHfOub2DQ==", "post"=>{"title"=>"BLOG DENEME", "body"=>"ZSH ve OH MY ZSH\r\n===\r\n\r\nZsh Nedir ?\r\n---\r\n**Zsh**, komit dili yorumlayıcısı olan **bash**'ın bir alternatifidir. Bir çok pratik özelliği vardır. Bunlardan sadece **otomatik tamamlama** özelliği bile **zsh**'a geçmenize yeterlidir. \r\n\r\nNasıl Yüklerim\r\n---\r\n`sudo apt-get install zsh`\r\n\r\n\r\nOh My Zsh Nedir ?\r\n--\r\n**Oh my zsh** ~./zshrc dosyasını kolay bi şekilde düzenlemenizi sağlar. Çeşitli eklentiler ve Temalar sağlayarak terminalden işlerini daha kolay ve zevkle halletmenizi sağlar. Mesela git eklentisi sayesinde branşlarınızı commitlerinizi otomatik olarak tamamlayabilir. Siz her terminali açtığınızda güncelliğinizi kontrol eder. \r\n`sh -c \"$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)\"`\r\n", "category_id"=>"1"}, "button"=>"", "id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "posts" SET "body" = $1, "updated_at" = $2 WHERE "posts"."id" = $3[0m  [["body", "ZSH ve OH MY ZSH\r\n===\r\n\r\nZsh Nedir ?\r\n---\r\n**Zsh**, komit dili yorumlayıcısı olan **bash**'ın bir alternatifidir. Bir çok pratik özelliği vardır. Bunlardan sadece **otomatik tamamlama** özelliği bile **zsh**'a geçmenize yeterlidir. \r\n\r\nNasıl Yüklerim\r\n---\r\n`sudo apt-get install zsh`\r\n\r\n\r\nOh My Zsh Nedir ?\r\n--\r\n**Oh my zsh** ~./zshrc dosyasını kolay bi şekilde düzenlemenizi sağlar. Çeşitli eklentiler ve Temalar sağlayarak terminalden işlerini daha kolay ve zevkle halletmenizi sağlar. Mesela git eklentisi sayesinde branşlarınızı commitlerinizi otomatik olarak tamamlayabilir. Siz her terminali açtığınızda güncelliğinizi kontrol eder. \r\n`sh -c \"$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)\"`\r\n"], ["updated_at", 2017-02-28 16:54:58 UTC], ["id", 1]]
+  [1m[35m (9.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 20ms (ActiveRecord: 11.8ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 19:54:58 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.5ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (14.3ms)
+Completed 200 OK in 81ms (Views: 73.5ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 19:57:50 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.5ms)
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (18.7ms)
+Completed 200 OK in 83ms (Views: 76.3ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 19:58:13 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.8ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (17.6ms)
+Completed 200 OK in 2288ms (Views: 2280.4ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 20:00:02 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.3ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (17.3ms)
+Completed 200 OK in 2421ms (Views: 2415.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 20:01:52 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.1ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (14.7ms)
+Completed 200 OK in 2201ms (Views: 2197.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 20:03:05 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.5ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (37.3ms)
+Completed 200 OK in 2298ms (Views: 2293.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 20:03:23 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.2ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (14.5ms)
+Completed 200 OK in 2174ms (Views: 2170.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 20:03:44 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.4ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (36.8ms)
+Completed 200 OK in 2424ms (Views: 2419.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 20:03:53 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.1ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (14.3ms)
+Completed 200 OK in 106ms (Views: 103.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 20:04:31 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (5.3ms)
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (26.6ms)
+Completed 200 OK in 2232ms (Views: 2226.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 20:05:03 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.7ms)
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (17.8ms)
+Completed 200 OK in 2228ms (Views: 2220.6ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 20:05:25 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.2ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (35.5ms)
+Completed 200 OK in 2220ms (Views: 2213.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 20:06:00 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.1ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (13.6ms)
+Completed 200 OK in 2209ms (Views: 2204.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 20:06:16 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (27.2ms)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (37.7ms)
+Completed 200 OK in 2286ms (Views: 2280.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/posts/1" for 127.0.0.1 at 2017-02-28 20:06:29 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  Rendering posts/show.html.haml within layouts/application
+  Rendering layouts/top.html.haml
+  Rendered layouts/top.html.haml (2.2ms)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered posts/show.html.haml within layouts/application (15.4ms)
+Completed 200 OK in 3342ms (Views: 3336.7ms | ActiveRecord: 1.7ms)
+
+
