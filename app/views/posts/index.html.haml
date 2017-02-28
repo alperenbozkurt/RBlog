@@ -8,7 +8,8 @@
           .yazibilgisi Alperen Bozkurt tarafından #{post.created_at} tarihinde yayınlandı.
           %hr/
         %p
-          =post.body
+          .markdown
+            = markdown(post.body)[markdown(post.body).index('</h2>')+5..(markdown(post.body).index('<h2>',markdown(post.body).index('</h2>'))-1)].html_safe
         %p
           =link_to 'Devamını Gör', post_path(post)
 .sag
