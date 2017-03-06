@@ -9,7 +9,10 @@
           %hr/
         %p
           .markdown
-            = markdown(post.body)[markdown(post.body).index('</h2>')+5..(markdown(post.body).index('<h2>',markdown(post.body).index('</h2>'))-1)].html_safe
+            - if markdown(post.body).index('</h2>') != nil
+              = markdown(post.body)[markdown(post.body).index('</h2>')+5..(markdown(post.body).index('<h2>',markdown(post.body).index('</h2>'))-1)].html_safe
+            - else
+              = markdown(post.body)
         %p
           =link_to 'Devamını Gör', post_path(post)
 .sag
